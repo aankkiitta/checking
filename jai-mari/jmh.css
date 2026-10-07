@@ -1,0 +1,2685 @@
+/* =========================================
+   JAI MARI HOME — STYLES
+========================================= */
+
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", -apple-system, sans-serif;
+  background: #ffffff;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+section[id],
+div[id] {
+  scroll-margin-top: 100px;
+}
+
+
+/* ============================================================================
+   ██  HEADER — Transparent top, dark on scroll
+   ============================================================================ */
+.jmh-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  /* ✅ Starting me transparent */
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+
+  padding: 24px 60px;
+  transition: padding 0.35s ease, background 0.35s ease,
+              border-color 0.35s ease, backdrop-filter 0.35s ease;
+}
+
+/* ✅ On scroll — dark + blur */
+.jmh-header.is-scrolled {
+  padding: 16px 60px;
+background: rgba(0, 0, 0, 0.03);             /* ✅ Thoda kam dark */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.jmh-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ---------- LOGO ---------- */
+.jmh-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.jmh-logo__img {
+  height: 60px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: height 0.35s ease;
+}
+
+.jmh-header.is-scrolled .jmh-logo__img {
+  height: 50px;
+}
+
+/* ---------- NAV ---------- */
+.jmh-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.jmh-nav__link {
+  position: relative;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 6px 0;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  transition: color 0.25s ease;
+}
+
+.jmh-nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1.5px;
+  background: #facc15;
+  transition: width 0.3s ease;
+}
+
+.jmh-nav__link:hover { color: #facc15; }
+.jmh-nav__link:hover::after { width: 100%; }
+
+/* ---------- RIGHT ACTIONS ---------- */
+.jmh-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.jmh-header__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 26px;
+  border: 1.5px solid #ffffff;
+  border-radius: 100px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.jmh-header__cta:hover {
+  background: #ffffff;
+  color: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* ---------- HAMBURGER ---------- */
+.jmh-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.jmh-burger:hover { opacity: 0.75; }
+
+.jmh-burger__line {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+}
+
+.jmh-burger:hover .jmh-burger__line:nth-child(1) { transform: translateY(-2px); }
+.jmh-burger:hover .jmh-burger__line:nth-child(3) { transform: translateY(2px); }
+
+/* ============================================================================
+   ██  RESPONSIVE
+   ============================================================================ */
+@media (max-width: 1024px) {
+  .jmh-header { padding: 20px 32px; }
+  .jmh-header.is-scrolled { padding: 14px 32px; }
+  .jmh-logo__img { height: 52px; }
+  .jmh-nav { gap: 22px; }
+  .jmh-nav__link { font-size: 14px; }
+}
+
+@media (max-width: 900px) {
+  .jmh-header { padding: 16px 20px; }
+  .jmh-header.is-scrolled { padding: 12px 20px; }
+  .jmh-logo__img { height: 46px; }
+  .jmh-nav { display: none; }
+  .jmh-header__cta { display: none; }
+  .jmh-burger { display: flex; }
+}
+
+@media (max-width: 480px) {
+  .jmh-logo__img { height: 42px; }
+  .jmh-burger { width: 36px; height: 36px; }
+  .jmh-burger__line { width: 22px; }
+}
+
+/* ============================================================================
+   ██  HERO — Image with slow zoom
+   ============================================================================ */
+.jmh-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  background: #1e293b;
+}
+
+.jmh-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("img/hero.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+
+  animation: hero-zoom 20s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes hero-zoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.15); }
+}
+
+.jmh-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.35) 0%,
+    rgba(15, 23, 42, 0.55) 100%
+  );
+  z-index: 1;
+}
+
+.jmh-hero__content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px 80px;
+  color: #ffffff;
+}
+
+.jmh-hero__eyebrow {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #facc15;
+  margin-bottom: 16px;
+}
+
+.jmh-hero__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 16px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.jmh-hero__sub {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ============================================================================
+   ██  OFFER STRIP — Scalloped top + Marquee
+   ============================================================================ */
+.jmh-offer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
+  background: #7a1f1f;
+  overflow: visible;
+  border: none;
+  box-shadow: none;
+  font-size: 0;
+  line-height: 0;
+}
+
+.jmh-offer__scallop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 32px;
+  transform: translateY(-100%);
+  line-height: 0;
+  font-size: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.jmh-offer__scallop svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.jmh-offer__strip {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  line-height: 0;
+  font-size: 0;
+}
+
+.jmh-offer__track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  height: 40px;
+  line-height: 0;
+  font-size: 0;
+
+  animation: jmh-offer-marquee 40s linear infinite;
+  will-change: transform;
+}
+
+@keyframes jmh-offer-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.jmh-offer:hover .jmh-offer__track {
+  animation-play-state: paused;
+}
+
+.jmh-offer__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 32px;
+  line-height: 1;
+  font-size: 13px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 1024px) {
+  .jmh-hero__title { font-size: 48px; letter-spacing: 2px; }
+  .jmh-hero__sub { font-size: 18px; }
+
+  .jmh-offer__scallop { height: 28px; }
+  .jmh-offer__track { height: 38px; }
+  .jmh-offer__item { font-size: 12px; padding: 0 24px; }
+}
+
+@media (max-width: 768px) {
+  .jmh-hero__title { font-size: 34px; letter-spacing: 2px; }
+  .jmh-hero__sub { font-size: 15px; }
+  .jmh-hero__eyebrow { font-size: 11px; letter-spacing: 3px; }
+
+  .jmh-offer { border: none; box-shadow: none; }
+  .jmh-offer__scallop { height: 24px; }
+  .jmh-offer__strip { border: none; outline: none; box-shadow: none; }
+  .jmh-offer__track { height: 36px; }
+  .jmh-offer__item {
+    font-size: 11px;
+    padding: 0 20px;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .jmh-hero__title { font-size: 26px; }
+  .jmh-hero__sub { font-size: 13px; }
+
+  .jmh-offer__scallop { height: 20px; }
+  .jmh-offer__track { height: 34px; }
+  .jmh-offer__item {
+    font-size: 10px;
+    padding: 0 16px;
+    letter-spacing: 0.8px;
+  }
+}
+
+
+/* ============================================================================
+   ██  OVERVIEW SECTION
+   ============================================================================ */
+.jmh-overview {
+  width: 100%;
+  padding: 85px 60px 40px;                   /* ✅ Bottom: 70 → 40 */
+  background: #ffffff;
+}
+
+.jmh-overview__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* ---------- LEFT — Text + Features ---------- */
+.jmh-overview__left { width: 100%; }
+
+.jmh-overview__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  color: #0f172a;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.jmh-overview__desc {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.85;
+  color: #4a5568;
+  margin-bottom: 32px;
+}
+
+.jmh-overview__features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.jmh-overview__feature {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.jmh-overview__feature-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  color: #0f172a;
+}
+
+.jmh-overview__feature-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.jmh-overview__feature-text {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15.5px;
+  font-weight: 400;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+.jmh-overview__feature-text strong {
+  font-weight: 700;
+  color: #0f172a;
+  margin-right: 4px;
+}
+
+/* ============================================================================
+   ██  RIGHT — OVERLAPPING IMAGES
+   Tall RIGHT + Small LEFT (perfectly centered)
+   ============================================================================ */
+.jmh-overview__right {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 620px;
+  margin-left: auto;
+}
+
+.jmh-overview__img {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.18);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.jmh-overview__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ✅ Balcony — TALL image, RIGHT side, BEHIND */
+.jmh-overview__img--balcony {
+  top: 0;
+  right: 0;
+  width: 62%;
+  height: 100%;
+  z-index: 1;
+}
+
+.jmh-overview__img--balcony:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 75px rgba(15, 23, 42, 0.25);
+}
+
+/* ✅ Towers — SMALL image, LEFT side, PERFECTLY CENTERED (on top) */
+.jmh-overview__img--towers {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 52%;
+  height: 78%;
+  z-index: 2;
+}
+
+.jmh-overview__img--towers:hover {
+  transform: translateY(calc(-50% - 6px));
+  box-shadow: 0 32px 75px rgba(15, 23, 42, 0.25);
+}
+
+/* ============================================================================
+   ██  DOTTED BUTTON — Reduced gap (desktop)
+   ============================================================================ */
+.jmh-overview__cta-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;                          /* ✅ 70px → 30px */
+  padding: 0 20px;
+}
+
+.jmh-overview__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  white-space: nowrap;
+
+  padding: 15px 40px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0f172a;
+  text-align: center;
+
+  background: transparent;
+  border: 2px dotted #0f172a;
+  border-radius: 100px;
+
+  transition: all 0.35s ease;
+}
+
+.jmh-overview__cta:hover {
+  background: #0f172a;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+}
+
+.jmh-overview__cta-dot {
+  display: inline-block;
+  color: currentColor;
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* ============================================================================
+   ██  OVERVIEW RESPONSIVE
+   ============================================================================ */
+@media (max-width: 1024px) {
+  .jmh-overview { padding: 70px 40px 35px; }
+  .jmh-overview__inner { gap: 45px; max-width: 1000px; }
+  .jmh-overview__title { font-size: 27px; }
+  .jmh-overview__desc { font-size: 13.5px; }
+  .jmh-overview__feature-text { font-size: 14.5px; }
+  .jmh-overview__cta { font-size: 12px; padding: 14px 32px; letter-spacing: 2.2px; }
+  .jmh-overview__cta-wrap { margin-top: 25px; }
+
+  .jmh-overview__img--towers {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 52%;
+    height: 78%;
+  }
+  .jmh-overview__img--towers:hover {
+    transform: translateY(calc(-50% - 6px));
+  }
+}
+
+@media (max-width: 900px) {
+  .jmh-overview__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .jmh-overview__right {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  .jmh-overview__cta-wrap { margin-top: 25px; }
+}
+
+@media (max-width: 640px) {
+  .jmh-overview { padding: 55px 20px 30px; }
+  .jmh-overview__title { font-size: 24px; letter-spacing: 1.2px; margin-bottom: 16px; }
+  .jmh-overview__desc { font-size: 13px; line-height: 1.75; margin-bottom: 26px; }
+
+  .jmh-overview__features { gap: 18px; }
+  .jmh-overview__feature { gap: 14px; }
+  .jmh-overview__feature-icon { width: 40px; height: 40px; }
+  .jmh-overview__feature-text { font-size: 13.5px; }
+
+  .jmh-overview__right { max-width: 100%; }
+
+  .jmh-overview__img--towers {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 55%;
+    height: 75%;
+  }
+  .jmh-overview__img--towers:hover {
+    transform: translateY(calc(-50% - 5px));
+  }
+
+  .jmh-overview__cta-wrap { margin-top: 20px; padding: 0 12px; }
+
+  .jmh-overview__cta {
+    display: flex;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 14px 22px;
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .jmh-overview__cta {
+    font-size: 10px;
+    letter-spacing: 1.4px;
+    padding: 13px 16px;
+    gap: 6px;
+  }
+}
+
+
+/* ============================================================================
+   ██  SIDE DRAWER
+   ============================================================================ */
+.jmh-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  pointer-events: none;
+}
+
+.jmh-drawer__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.jmh-drawer__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  height: 100dvh;
+  width: 360px;
+  max-width: 85vw;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  box-shadow: -10px 0 40px rgba(15, 23, 42, 0.18);
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jmh-drawer.is-open { pointer-events: auto; }
+.jmh-drawer.is-open .jmh-drawer__overlay { opacity: 1; visibility: visible; }
+.jmh-drawer.is-open .jmh-drawer__panel { transform: translateX(0); }
+
+.jmh-drawer__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 26px;
+  border-bottom: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.jmh-logo--drawer .jmh-logo__img {
+  height: 44px;
+  filter: none;
+}
+
+.jmh-drawer__close {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 17px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease, color 0.25s ease;
+}
+
+.jmh-drawer__close:hover {
+  background: #7a1f1f;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+.jmh-drawer__nav {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.jmh-drawer__link {
+  position: relative;
+  display: block;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1e293b;
+  text-decoration: none;
+  padding: 16px 26px;
+  border-bottom: 1px solid #f1f5f9;
+  transition: color 0.25s ease, padding 0.3s ease,
+              background 0.25s ease, letter-spacing 0.25s ease;
+}
+
+.jmh-drawer__link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background: #7a1f1f;
+  transition: height 0.3s ease;
+}
+
+.jmh-drawer__link:hover {
+  background: #fdf2f2;
+  color: #7a1f1f;
+  padding-left: 34px;
+  letter-spacing: 0.3px;
+}
+
+.jmh-drawer__link:hover::before {
+  height: 60%;
+}
+
+.jmh-drawer__footer {
+  padding: 20px 26px 26px;
+  border-top: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.jmh-drawer__cta {
+  display: block;
+  padding: 14px 24px;
+  text-align: center;
+  background: #0f172a;
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+.jmh-drawer__cta:hover {
+  background: #7a1f1f;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(122, 31, 31, 0.3);
+}
+
+body.jmh-drawer-open {
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .jmh-drawer__panel { width: 320px; max-width: 86vw; }
+  .jmh-drawer__head { padding: 18px 22px; }
+  .jmh-logo--drawer .jmh-logo__img { height: 40px; }
+  .jmh-drawer__close { width: 38px; height: 38px; }
+  .jmh-drawer__link { font-size: 14.5px; padding: 15px 22px; }
+  .jmh-drawer__link:hover { padding-left: 30px; }
+  .jmh-drawer__footer { padding: 18px 22px 22px; }
+}
+
+@media (max-width: 480px) {
+  .jmh-drawer__panel { width: 300px; max-width: 82vw; }
+  .jmh-drawer__head { padding: 16px 20px; }
+  .jmh-logo--drawer .jmh-logo__img { height: 38px; }
+  .jmh-drawer__close { width: 36px; height: 36px; font-size: 15px; }
+  .jmh-drawer__link { font-size: 14px; padding: 14px 20px; }
+  .jmh-drawer__link:hover { padding-left: 28px; }
+  .jmh-drawer__footer { padding: 16px 20px 20px; }
+  .jmh-drawer__cta { font-size: 12px; padding: 13px 20px; }
+}
+
+@media (max-width: 380px) {
+  .jmh-drawer__panel { width: 280px; max-width: 88vw; }
+  .jmh-drawer__link { font-size: 13.5px; padding: 13px 18px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   ██  CONFIGURATION SECTION
+   ============================================================================ */
+.jmh-config {
+  width: 100%;
+  padding: 80px 60px 80px;
+  background: #faf8f5;                        /* ✅ Warm off-white bg */
+}
+
+.jmh-config__inner {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+/* ---------- SECTION HEADING ---------- */
+.jmh-config__head {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.jmh-config__eyebrow {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #7a1f1f;
+  margin-bottom: 12px;
+}
+
+.jmh-config__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.jmh-config__divider {
+  display: block;
+  width: 55px;
+  height: 2px;
+  background: #7a1f1f;
+  margin: 0 auto;
+}
+
+/* ---------- GRID ---------- */
+.jmh-config__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+/* ---------- CARD (base = white) ---------- */
+.jmh-config__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+  padding: 32px 28px 24px;
+
+  background: #ffffff;
+  border: 1px solid #ece8e1;
+  border-radius: 4px;
+
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease,
+              border-color 0.35s ease;
+}
+
+.jmh-config__card:hover {
+  transform: translateY(-4px);
+  border-color: #d4c8b0;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+}
+
+/* ✅ Diagonal stripe pattern (top-right) */
+.jmh-config__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 160px;
+  height: 160px;
+
+  background-image: repeating-linear-gradient(
+    135deg,
+    #e8e2d6 0px,
+    #e8e2d6 1px,
+    transparent 1px,
+    transparent 10px
+  );
+  opacity: 0.65;
+  pointer-events: none;
+
+  -webkit-mask-image: linear-gradient(225deg, #000 30%, transparent 80%);
+          mask-image: linear-gradient(225deg, #000 30%, transparent 80%);
+}
+
+/* ---------- FEATURED CARD (maroon bg) ---------- */
+.jmh-config__card--featured {
+  background: #7a1f1f;                        /* ✅ Maroon */
+  border-color: #7a1f1f;
+}
+
+.jmh-config__card--featured:hover {
+  border-color: #5f1414;
+  box-shadow: 0 14px 35px rgba(122, 31, 31, 0.25);
+}
+
+/* ✅ Featured card — stripe pattern adjusted for maroon */
+.jmh-config__card--featured::before {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0px,
+    rgba(255, 255, 255, 0.15) 1px,
+    transparent 1px,
+    transparent 10px
+  );
+  opacity: 0.7;
+}
+
+/* ---------- CARD CONTENT ---------- */
+.jmh-config__content {
+  position: relative;
+  z-index: 1;
+}
+
+.jmh-config__card-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 500;                            /* ✅ Regular/medium weight */
+  letter-spacing: 1px;
+  line-height: 1.2;
+  color: #7a1f1f;                              /* ✅ Maroon on white */
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.jmh-config__card-area {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #334155;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.jmh-config__card-area sup {
+  font-size: 11px;
+  color: #7a1f1f;
+  margin-left: 3px;
+}
+
+/* ---------- FEATURED CARD text colors (white) ---------- */
+.jmh-config__card--featured .jmh-config__card-title {
+  color: #ffffff;                              /* ✅ White on maroon */
+}
+
+.jmh-config__card--featured .jmh-config__card-area {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.jmh-config__card--featured .jmh-config__card-area sup {
+  color: #f5c84a;                              /* ✅ Gold asterisk */
+}
+
+/* ---------- FOOTER (icon + link) ---------- */
+.jmh-config__footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.jmh-config__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: #d4c8b0;                              /* ✅ Soft beige */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.jmh-config__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.jmh-config__card:hover .jmh-config__icon {
+  color: #7a1f1f;
+  transform: rotate(-6deg) scale(1.05);
+}
+
+/* Featured — icon color */
+.jmh-config__card--featured .jmh-config__icon {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.jmh-config__card--featured:hover .jmh-config__icon {
+  color: #f5c84a;                              /* ✅ Gold on hover */
+}
+
+/* ---------- ENQUIRE NOW link ---------- */
+.jmh-config__link {
+  position: relative;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #7a1f1f;
+  padding-bottom: 6px;
+
+  transition: color 0.25s ease;
+}
+
+/* ✅ Underline (bottom border style) */
+.jmh-config__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background: #7a1f1f;
+  transition: background 0.25s ease;
+}
+
+.jmh-config__link:hover {
+  color: #5f1414;
+}
+
+.jmh-config__link:hover::after {
+  background: #5f1414;
+}
+
+/* Featured — link white */
+.jmh-config__card--featured .jmh-config__link {
+  color: #ffffff;
+}
+
+.jmh-config__card--featured .jmh-config__link::after {
+  background: #ffffff;
+}
+
+.jmh-config__card--featured .jmh-config__link:hover {
+  color: #f5c84a;
+}
+
+.jmh-config__card--featured .jmh-config__link:hover::after {
+  background: #f5c84a;
+}
+
+/* ============================================================================
+   ██  RESPONSIVE
+   ============================================================================ */
+@media (max-width: 1024px) {
+  .jmh-config { padding: 65px 40px 65px; }
+  .jmh-config__title { font-size: 24px; }
+  .jmh-config__grid { gap: 20px; }
+  .jmh-config__card { padding: 28px 24px 22px; min-height: 240px; }
+  .jmh-config__card-title { font-size: 22px; }
+  .jmh-config__card-area { font-size: 14px; }
+}
+
+@media (max-width: 900px) {
+  .jmh-config__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .jmh-config { padding: 55px 20px 55px; }
+  .jmh-config__head { margin-bottom: 35px; }
+  .jmh-config__eyebrow { font-size: 11px; letter-spacing: 3px; margin-bottom: 8px; }
+  .jmh-config__title { font-size: 20px; letter-spacing: 1.2px; margin-bottom: 12px; }
+  .jmh-config__divider { width: 45px; }
+
+  .jmh-config__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .jmh-config__card {
+    min-height: 200px;
+    padding: 26px 22px 20px;
+  }
+
+  .jmh-config__card::before {
+    width: 120px;
+    height: 120px;
+  }
+
+  .jmh-config__card-title { font-size: 20px; margin-bottom: 10px; }
+  .jmh-config__card-area { font-size: 13.5px; }
+
+  .jmh-config__footer { margin-top: 30px; }
+  .jmh-config__icon { width: 36px; height: 36px; }
+  .jmh-config__link { font-size: 11.5px; letter-spacing: 1.5px; }
+}
+
+@media (max-width: 400px) {
+  .jmh-config__card-title { font-size: 18px; }
+  .jmh-config__card-area { font-size: 13px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   ██  FLOOR PLANS SECTION
+   ============================================================================ */
+.jmh-plans {
+  width: 100%;
+  padding: 85px 60px 85px;
+  background: #ffffff;
+}
+
+/* ---------- SECTION HEADING ---------- */
+.jmh-plans__head {
+  text-align: center;
+  margin-bottom: 70px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.jmh-plans__eyebrow {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #7a1f1f;                             /* ✅ Maroon */
+  margin-bottom: 14px;
+}
+
+.jmh-plans__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.jmh-plans__divider {
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #7a1f1f;                        /* ✅ Maroon */
+  margin: 0 auto;
+}
+
+/* ---------- ROW ---------- */
+.jmh-plan__row {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  align-items: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto 100px;
+}
+
+.jmh-plan__row:last-child {
+  margin-bottom: 0;
+}
+
+/* Reverse row — Image LEFT, Text RIGHT */
+.jmh-plan__row--reverse .jmh-plan__content { order: 2; }
+.jmh-plan__row--reverse .jmh-plan__media   { order: 1; }
+
+/* ---------- CONTENT ---------- */
+.jmh-plan__content {
+  max-width: 520px;
+}
+
+/* ✅ BHK Title — Maroon */
+.jmh-plan__bhk {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #7a1f1f;                             /* ✅ Maroon */
+  margin-bottom: 6px;
+}
+
+/* Tagline */
+.jmh-plan__tagline {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: #64748b;                             /* ✅ Slate grey */
+  margin-bottom: 20px;
+}
+
+/* Lead */
+.jmh-plan__lead {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  line-height: 1.35;
+  color: #0f172a;
+  margin-bottom: 20px;
+  text-transform: none;
+}
+
+/* Description */
+.jmh-plan__desc {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #4a5568;
+  margin-bottom: 28px;
+}
+
+/* ---------- SPECS ---------- */
+.jmh-plan__specs {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.jmh-plan__specs li {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14.5px;
+}
+
+/* ✅ Spec label — Maroon */
+.jmh-plan__label {
+  font-weight: 700;
+  color: #7a1f1f;                             /* ✅ Maroon */
+  min-width: 110px;
+}
+
+/* Spec value — Dark */
+.jmh-plan__value {
+  font-weight: 500;
+  color: #0f172a;
+}
+
+/* ---------- BUTTON — Maroon dotted ---------- */
+.jmh-plan__btn {
+  display: inline-block;
+  padding: 14px 40px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #7a1f1f;                             /* ✅ Maroon */
+  text-align: center;
+
+  background: transparent;
+  border: 2px dotted #7a1f1f;                 /* ✅ Maroon dotted */
+  border-radius: 100px;
+
+  transition: all 0.35s ease;
+}
+
+.jmh-plan__btn:hover {
+  background: #7a1f1f;                        /* ✅ Maroon fill */
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(122, 31, 31, 0.3);
+}
+
+/* ---------- MEDIA ---------- */
+.jmh-plan__media {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jmh-plan__media img {
+  width: 100%;
+  height: auto;
+  max-width: 620px;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(15, 23, 42, 0.08));
+}
+
+/* ============================================================================
+   ██  RESPONSIVE
+   ============================================================================ */
+@media (max-width: 1024px) {
+  .jmh-plans { padding: 70px 40px 70px; }
+  .jmh-plans__head { margin-bottom: 55px; }
+  .jmh-plans__title { font-size: 28px; }
+  .jmh-plan__row { gap: 45px; margin-bottom: 80px; }
+  .jmh-plan__bhk { font-size: 28px; }
+  .jmh-plan__lead { font-size: 20px; }
+}
+
+@media (max-width: 900px) {
+  .jmh-plan__row,
+  .jmh-plan__row--reverse {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  /* ✅ Mobile — Text FIRST, Image SECOND */
+  .jmh-plan__row--reverse .jmh-plan__content { order: 1; }
+  .jmh-plan__row--reverse .jmh-plan__media   { order: 2; }
+
+  .jmh-plan__content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .jmh-plan__media img {
+    max-width: 100%;
+  }
+
+  .jmh-plan__specs li {
+    justify-content: center;
+  }
+
+  .jmh-plan__btn {
+    display: block;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .jmh-plans { padding: 55px 20px 55px; }
+  .jmh-plans__head { margin-bottom: 45px; }
+  .jmh-plans__eyebrow { font-size: 11px; letter-spacing: 3px; margin-bottom: 10px; }
+  .jmh-plans__title { font-size: 22px; letter-spacing: 1.5px; margin-bottom: 12px; }
+  .jmh-plans__divider { width: 50px; }
+
+  .jmh-plan__row { margin-bottom: 60px; gap: 30px; }
+
+  .jmh-plan__bhk { font-size: 24px; letter-spacing: 0.8px; }
+  .jmh-plan__tagline { font-size: 14px; margin-bottom: 14px; }
+  .jmh-plan__lead { font-size: 17px; margin-bottom: 16px; }
+  .jmh-plan__desc { font-size: 13px; line-height: 1.75; margin-bottom: 22px; }
+
+  .jmh-plan__specs { gap: 10px; margin-bottom: 26px; }
+  .jmh-plan__specs li { font-size: 13px; gap: 14px; }
+  .jmh-plan__label { min-width: 100px; }
+
+  .jmh-plan__btn {
+    padding: 13px 28px;
+    font-size: 11.5px;
+    letter-spacing: 2px;
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 400px) {
+  .jmh-plan__bhk { font-size: 22px; }
+  .jmh-plan__lead { font-size: 16px; }
+  .jmh-plan__desc { font-size: 12.5px; }
+  .jmh-plan__btn { font-size: 11px; padding: 12px 22px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   ██  AMENITIES SECTION
+   ============================================================================ */
+.jmh-amenities {
+  width: 100%;
+  padding: 70px 40px 70px;
+  background: #f8f5f0;                        /* ✅ Warm off-white (not pure white) */
+}
+
+.jmh-amenities__inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* ---------- HEADING ---------- */
+.jmh-amenities__head {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.jmh-amenities__eyebrow {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #7a1f1f;
+  margin-bottom: 14px;
+}
+
+.jmh-amenities__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.jmh-amenities__divider {
+  display: block;
+  width: 55px;
+  height: 2px;
+  background: #7a1f1f;
+  margin: 0 auto;
+}
+
+/* ---------- GRID — ALL IN ONE ROW ---------- */
+.jmh-amenities__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);      /* ✅ 6 items in one row */
+  gap: 24px;
+}
+
+/* ---------- ITEM ---------- */
+.jmh-amenities__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+
+  transition: transform 0.3s ease;
+}
+
+.jmh-amenities__item:hover {
+  transform: translateY(-4px);
+}
+
+/* Icon */
+.jmh-amenities__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  color: #7a1f1f;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.jmh-amenities__icon svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: 1.3;
+}
+
+.jmh-amenities__item:hover .jmh-amenities__icon {
+  transform: scale(1.1);
+  color: #5f1414;
+}
+
+/* Label */
+.jmh-amenities__label {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+  color: #0f172a;
+  margin: 0;
+
+  transition: color 0.3s ease;
+}
+
+.jmh-amenities__item:hover .jmh-amenities__label {
+  color: #7a1f1f;
+}
+
+/* ============================================================================
+   ██  RESPONSIVE
+   ============================================================================ */
+
+/* ---------- 1024px — Still in one row, smaller ---------- */
+@media (max-width: 1024px) {
+  .jmh-amenities { padding: 60px 30px 60px; }
+  .jmh-amenities__title { font-size: 24px; }
+  .jmh-amenities__grid {
+    grid-template-columns: repeat(6, 1fr);    /* ✅ Still 6 in one row */
+    gap: 18px;
+  }
+  .jmh-amenities__icon { width: 52px; height: 52px; }
+  .jmh-amenities__label { font-size: 12px; }
+}
+
+/* ---------- 768px — Still one row ---------- */
+@media (max-width: 768px) {
+  .jmh-amenities { padding: 55px 20px 55px; }
+  .jmh-amenities__grid {
+    grid-template-columns: repeat(6, 1fr);    /* ✅ Still 6 in one row */
+    gap: 12px;
+  }
+  .jmh-amenities__icon { width: 46px; height: 46px; }
+  .jmh-amenities__label { font-size: 11px; }
+}
+
+/* ---------- 640px — MOBILE — 2 per row ---------- */
+@media (max-width: 640px) {
+  .jmh-amenities { padding: 50px 16px 50px; }
+  .jmh-amenities__head { margin-bottom: 40px; }
+  .jmh-amenities__eyebrow { font-size: 11px; letter-spacing: 3px; margin-bottom: 10px; }
+  .jmh-amenities__title { font-size: 20px; letter-spacing: 1.2px; margin-bottom: 12px; }
+  .jmh-amenities__divider { width: 45px; }
+
+  .jmh-amenities__grid {
+    grid-template-columns: repeat(2, 1fr);    /* ✅ 2 per row on mobile */
+    gap: 30px 20px;
+  }
+
+  .jmh-amenities__icon { width: 56px; height: 56px; }
+  .jmh-amenities__label { font-size: 13px; }
+}
+
+@media (max-width: 400px) {
+  .jmh-amenities__grid { gap: 24px 14px; }
+  .jmh-amenities__icon { width: 48px; height: 48px; }
+  .jmh-amenities__label { font-size: 12px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   ██  LOCATION ADVANTAGES
+   ============================================================================ */
+.jmh-loc {
+  width: 100%;
+  padding: 70px 60px 70px;
+  background: #fdf5f2;
+}
+
+.jmh-loc__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ---------- HEADING ---------- */
+.jmh-loc__head {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.jmh-loc__eyebrow {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #7a1f1f;
+  margin-bottom: 12px;
+}
+
+.jmh-loc__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: #0f172a;
+  margin: 0 0 16px;
+}
+
+.jmh-loc__divider {
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #7a1f1f;
+  margin: 0 auto;
+}
+
+/* ---------- BODY GRID ---------- */
+.jmh-loc__body {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;           /* ✅ List wider, map narrower */
+  gap: 50px;
+  align-items: center;                        /* ✅ Center align vertically */
+}
+
+/* ---------- LEFT — List Grid ---------- */
+.jmh-loc__content {
+  width: 100%;
+}
+
+.jmh-loc__grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);      /* ✅ 3 columns */
+  gap: 22px 20px;
+}
+
+/* ---------- ITEM ---------- */
+.jmh-loc__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  transition: transform 0.3s ease;
+}
+
+.jmh-loc__item:hover {
+  transform: translateX(3px);
+}
+
+/* Icon */
+.jmh-loc__icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;                                /* ✅ Chota icon */
+  height: 22px;
+  color: #7a1f1f;
+  margin-top: 1px;
+  transition: transform 0.3s ease;
+}
+
+.jmh-loc__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.jmh-loc__item:hover .jmh-loc__icon {
+  transform: scale(1.12);
+}
+
+/* Text block */
+.jmh-loc__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 1.3;
+}
+
+.jmh-loc__text strong {
+  font-size: 12.5px;                          /* ✅ Chota font */
+  font-weight: 600;
+  color: #0f172a;
+  transition: color 0.3s ease;
+}
+
+.jmh-loc__item:hover .jmh-loc__text strong {
+  color: #7a1f1f;
+}
+
+.jmh-loc__time {
+  font-size: 11px;
+  font-weight: 400;
+  color: #94a3b8;
+}
+
+/* ---------- RIGHT — Map ---------- */
+.jmh-loc__media {
+  width: 100%;
+  position: sticky;
+  top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jmh-loc__map-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.jmh-loc__map-link {
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(122, 31, 31, 0.12);
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.jmh-loc__map-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 55px rgba(122, 31, 31, 0.2);
+}
+
+.jmh-loc__map-link img {
+  width: 100%;
+  height: auto;
+  max-height: 450px;                          /* ✅ Max height limit */
+  object-fit: cover;
+  display: block;
+}
+
+/* Map CTA */
+.jmh-loc__map-cta {
+  display: inline-block;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0f172a;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid #0f172a;
+  transition: color 0.3s ease, border-color 0.3s ease,
+              letter-spacing 0.3s ease;
+}
+
+.jmh-loc__map-cta:hover {
+  color: #7a1f1f;
+  border-color: #7a1f1f;
+  letter-spacing: 3px;
+}
+
+/* ============================================================================
+   ██  RESPONSIVE
+   ============================================================================ */
+@media (max-width: 1200px) {
+  .jmh-loc { padding: 60px 40px 60px; }
+  .jmh-loc__title { font-size: 34px; }
+  .jmh-loc__body { gap: 36px; }
+  .jmh-loc__grid { gap: 20px 18px; }
+  .jmh-loc__text strong { font-size: 12px; }
+  .jmh-loc__map-link img { max-height: 400px; }
+}
+
+@media (max-width: 1024px) {
+  .jmh-loc__body {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    align-items: start;                        /* ✅ Reset on mobile */
+  }
+
+  .jmh-loc__media {
+    position: static;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .jmh-loc__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .jmh-loc { padding: 50px 24px 55px; }
+  .jmh-loc__title { font-size: 28px; letter-spacing: 1.5px; }
+
+  .jmh-loc__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 14px;
+  }
+  .jmh-loc__icon { width: 20px; height: 20px; }
+  .jmh-loc__text strong { font-size: 12px; }
+}
+
+@media (max-width: 640px) {
+  .jmh-loc { padding: 45px 18px 50px; }
+  .jmh-loc__head { margin-bottom: 36px; }
+  .jmh-loc__eyebrow { font-size: 11px; letter-spacing: 3px; margin-bottom: 10px; }
+  .jmh-loc__title { font-size: 22px; letter-spacing: 1.2px; margin-bottom: 12px; }
+  .jmh-loc__divider { width: 50px; height: 2px; }
+
+  .jmh-loc__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .jmh-loc__item {
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #e2e8f0;
+  }
+
+  .jmh-loc__item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .jmh-loc__text strong { font-size: 12.5px; }
+  .jmh-loc__time { font-size: 11px; }
+
+  .jmh-loc__map-cta { font-size: 11px; letter-spacing: 2px; }
+}
+
+@media (max-width: 400px) {
+  .jmh-loc__title { font-size: 20px; }
+  .jmh-loc__icon { width: 18px; height: 18px; }
+  .jmh-loc__text strong { font-size: 12px; }
+}
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   ██  PROJECT GALLERY
+   ============================================================================ */
+.jmh-gallery {
+  width: 100%;
+  padding: 50px 0 60px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.jmh-gallery__inner {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* ---------- HEADING ---------- */
+.jmh-gallery__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #0f172a;
+  margin: 0 0 40px;
+  padding: 0 20px;
+}
+
+/* ---------- WRAPPER ---------- */
+.jmh-gallery__wrap {
+  position: relative;
+  padding: 0 70px;
+}
+
+/* ---------- VIEWPORT ---------- */
+.jmh-gallery__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.jmh-gallery__track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* ---------- CARD ---------- */
+.jmh-gallery__card {
+  position: relative;
+  flex-shrink: 0;
+  width: calc((100% - 48px) / 3);            /* ✅ 3 cards visible */
+  aspect-ratio: 4 / 3;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #1e293b;
+}
+
+.jmh-gallery__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.jmh-gallery__card:hover img {
+  transform: scale(1.04);
+}
+
+/* Dark gradient at bottom */
+.jmh-gallery__card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 60%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+/* Blue dot — active card only */
+.jmh-gallery__card::before {
+  content: "";
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1e40af;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.jmh-gallery__card.is-active::before {
+  opacity: 1;
+}
+
+/* ---------- LABEL ---------- */
+.jmh-gallery__label {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  z-index: 2;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- ARROWS ---------- */
+.jmh-gallery__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1;
+
+  background: transparent;
+  color: #10b981;                             /* ✅ Green */
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.jmh-gallery__arrow:hover {
+  color: #059669;
+  transform: translateY(-50%) scale(1.15);
+}
+
+.jmh-gallery__arrow--prev { left: 8px; }
+.jmh-gallery__arrow--next { right: 8px; }
+
+/* ============================================================================
+   ██  RESPONSIVE
+   ============================================================================ */
+
+/* ---------- 1024px ---------- */
+@media (max-width: 1024px) {
+  .jmh-gallery__title { font-size: 32px; margin-bottom: 32px; }
+  .jmh-gallery__wrap { padding: 0 55px; }
+  .jmh-gallery__label { font-size: 18px; bottom: 16px; left: 18px; }
+}
+
+/* ---------- 768px — 2 cards ---------- */
+@media (max-width: 768px) {
+  .jmh-gallery { padding: 40px 0 50px; }
+  .jmh-gallery__title { font-size: 26px; margin-bottom: 28px; }
+  .jmh-gallery__wrap { padding: 0 44px; }
+
+  .jmh-gallery__card {
+    width: calc((100% - 24px) / 2);
+  }
+
+  .jmh-gallery__track { gap: 24px; }
+
+  .jmh-gallery__label { font-size: 16px; bottom: 14px; left: 16px; }
+
+  /* ✅ Arrows still simple */
+  .jmh-gallery__arrow {
+    font-size: 34px;
+    width: 40px;
+    height: 40px;
+  }
+  .jmh-gallery__arrow--prev { left: 4px; }
+  .jmh-gallery__arrow--next { right: 4px; }
+}
+
+/* ---------- 640px — Mobile: 1 card + simple arrows ---------- */
+@media (max-width: 640px) {
+  .jmh-gallery { padding: 35px 0 45px; }
+  .jmh-gallery__title { font-size: 22px; margin-bottom: 24px; }
+  .jmh-gallery__wrap { padding: 0 36px; }    /* ✅ Side space for arrows */
+
+  .jmh-gallery__card {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .jmh-gallery__track { gap: 20px; }
+
+  .jmh-gallery__label { font-size: 18px; bottom: 16px; left: 18px; }
+
+  /* ✅ Simple `< >` arrows only */
+  .jmh-gallery__arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 30px;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .jmh-gallery__arrow--prev { left: 2px; }
+  .jmh-gallery__arrow--next { right: 2px; }
+
+  .jmh-gallery__card::before {
+    width: 6px;
+    height: 6px;
+    bottom: 14px;
+  }
+}
+
+/* ---------- 400px ---------- */
+@media (max-width: 400px) {
+  .jmh-gallery__title { font-size: 20px; }
+  .jmh-gallery__wrap { padding: 0 30px; }
+  .jmh-gallery__arrow { font-size: 26px; width: 30px; height: 30px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   ██  ABOUT DEVELOPER SECTION
+   ============================================================================ */
+.jmh-about {
+  width: 100%;
+  padding: 80px 60px 80px;
+  background: #ffffff;
+}
+
+.jmh-about__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ---------- HEADING ---------- */
+.jmh-about__head {
+  margin-bottom: 40px;
+}
+
+.jmh-about__eyebrow {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #7a1f1f;
+  margin-bottom: 14px;
+}
+
+.jmh-about__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #0f172a;
+  margin: 0 0 20px;
+}
+
+.jmh-about__divider {
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #7a1f1f;
+  margin: 0 auto;
+}
+
+/* ---------- LOGO ---------- */
+.jmh-about__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px;
+  width: 140px;
+  height: 100px;
+}
+
+.jmh-about__logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ---------- DESCRIPTION ---------- */
+.jmh-about__desc {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.85;
+  color: #4a5568;
+  margin: 0 auto 45px;
+  max-width: 820px;
+}
+
+/* ---------- STATS ---------- */
+.jmh-about__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 700px;
+  margin: 0 auto 45px;
+  padding: 32px 20px;
+  border-top: 1px dashed #e2e8f0;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.jmh-about__stat {
+  text-align: center;
+}
+
+.jmh-about__stat-value {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  color: #0f172a;
+  margin: 0 0 10px;
+}
+
+.jmh-about__stat-value span {
+  color: #7a1f1f;
+  font-size: 26px;
+  margin-left: 2px;
+}
+
+.jmh-about__stat-label {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ---------- WEBSITE LINK — Simple ---------- */
+.jmh-about__link {
+  display: inline-block;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  color: #7a1f1f;
+
+  text-decoration: none;
+  border-bottom: 1px solid #7a1f1f;
+  padding-bottom: 2px;
+
+  transition: color 0.25s ease, border-color 0.25s ease,
+              opacity 0.25s ease;
+}
+
+.jmh-about__link:hover {
+  color: #5f1414;
+  border-color: #5f1414;
+  opacity: 0.85;
+}
+
+.jmh-about__link svg {
+  display: none;
+}
+
+/* ============================================================================
+   ██  RESPONSIVE
+   ============================================================================ */
+@media (max-width: 1024px) {
+  .jmh-about { padding: 65px 40px 65px; }
+  .jmh-about__title { font-size: 28px; }
+  .jmh-about__desc { font-size: 14.5px; }
+  .jmh-about__stat-value { font-size: 32px; }
+}
+
+@media (max-width: 768px) {
+  .jmh-about { padding: 55px 24px 60px; }
+  .jmh-about__title { font-size: 24px; letter-spacing: 1.5px; }
+  .jmh-about__logo { width: 120px; height: 85px; margin-bottom: 24px; }
+  .jmh-about__desc { font-size: 14px; line-height: 1.75; margin-bottom: 36px; }
+
+  .jmh-about__stats {
+    padding: 26px 10px;
+    gap: 20px;
+    margin-bottom: 36px;
+  }
+  .jmh-about__stat-value { font-size: 28px; margin-bottom: 8px; }
+  .jmh-about__stat-value span { font-size: 20px; }
+  .jmh-about__stat-label { font-size: 11px; letter-spacing: 1px; }
+
+  .jmh-about__link { font-size: 13.5px; }
+}
+
+@media (max-width: 640px) {
+  .jmh-about { padding: 50px 18px 55px; }
+  .jmh-about__eyebrow { font-size: 11px; letter-spacing: 3px; margin-bottom: 10px; }
+  .jmh-about__title { font-size: 20px; letter-spacing: 1.2px; margin-bottom: 14px; }
+  .jmh-about__divider { width: 50px; }
+
+  .jmh-about__logo { width: 100px; height: 70px; margin-bottom: 20px; }
+  .jmh-about__desc { font-size: 13px; line-height: 1.7; margin-bottom: 30px; }
+
+  .jmh-about__stats {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 22px 10px;
+    margin-bottom: 30px;
+  }
+  .jmh-about__stat-value { font-size: 26px; margin-bottom: 6px; }
+  .jmh-about__stat-value span { font-size: 18px; }
+  .jmh-about__stat-label { font-size: 10.5px; }
+
+  .jmh-about__link { font-size: 12.5px; }
+}
+
+@media (max-width: 400px) {
+  .jmh-about__title { font-size: 18px; }
+  .jmh-about__desc { font-size: 12.5px; }
+  .jmh-about__stat-value { font-size: 24px; }
+}
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   ██  ENQUIRY MODAL
+   ============================================================================ */
+.jmh-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.jmh-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---------- OVERLAY ---------- */
+.jmh-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+
+/* ---------- MODAL BOX ---------- */
+.jmh-modal__box {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.35);
+
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jmh-modal.is-open .jmh-modal__box {
+  transform: translateY(0) scale(1);
+}
+
+/* ---------- HEADER (Maroon) ---------- */
+.jmh-modal__header {
+  position: relative;
+  padding: 22px 60px 22px 24px;
+
+  background: #7a1f1f;                        /* ✅ Maroon */
+  color: #ffffff;
+  text-align: center;
+}
+
+.jmh-modal__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Close button */
+.jmh-modal__close {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  color: #ffffff;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: background 0.25s ease;
+}
+
+.jmh-modal__close:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ---------- BODY ---------- */
+.jmh-modal__body {
+  padding: 40px 42px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ---------- FIELD (Bottom-border only) ---------- */
+.jmh-modal__field {
+  position: relative;
+}
+
+.jmh-modal__field input {
+  width: 100%;
+  padding: 8px 0 10px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #0f172a;
+
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid #334155;
+  outline: none;
+
+  transition: border-color 0.25s ease;
+}
+
+.jmh-modal__field input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.jmh-modal__field input:focus {
+  border-bottom-color: #7a1f1f;                /* ✅ Maroon on focus */
+}
+
+/* ---------- CONSENT ---------- */
+.jmh-modal__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #475569;
+  cursor: pointer;
+}
+
+.jmh-modal__consent input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  margin-top: 2px;
+  accent-color: #7a1f1f;                      /* ✅ Maroon checkbox */
+  cursor: pointer;
+}
+
+.jmh-modal__consent a {
+  color: #2563eb;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+/* ---------- SUBMIT BUTTON (Maroon) ---------- */
+.jmh-modal__submit {
+  display: block;
+  margin: 8px auto 0;
+  padding: 14px 60px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  background: #7a1f1f;                        /* ✅ Maroon */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(122, 31, 31, 0.3);
+  transition: all 0.3s ease;
+}
+
+.jmh-modal__submit:hover {
+  background: #5f1414;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(122, 31, 31, 0.4);
+}
+
+.jmh-modal__submit:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(122, 31, 31, 0.35);
+}
+
+/* ---------- BODY LOCK ---------- */
+body.jmh-modal-open {
+  overflow: hidden;
+}
+
+/* ============================================================================
+   ██  MODAL RESPONSIVE
+   ============================================================================ */
+@media (max-width: 640px) {
+  .jmh-modal {
+    padding: 14px;
+    align-items: center;
+  }
+
+  .jmh-modal__box {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .jmh-modal__header {
+    padding: 18px 50px 18px 18px;
+  }
+
+  .jmh-modal__title {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .jmh-modal__close {
+    right: 12px;
+    font-size: 16px;
+  }
+
+  .jmh-modal__body {
+    padding: 30px 24px 30px;
+    gap: 24px;
+  }
+
+  .jmh-modal__field input {
+    font-size: 14px;
+    padding: 7px 0 9px;
+  }
+
+  .jmh-modal__consent {
+    font-size: 12px;
+  }
+
+  .jmh-modal__submit {
+    padding: 13px 44px;
+    font-size: 13.5px;
+    letter-spacing: 1.7px;
+  }
+}
+
+@media (max-width: 400px) {
+  .jmh-modal__title { font-size: 13px; }
+  .jmh-modal__body { padding: 26px 18px 26px; gap: 22px; }
+  .jmh-modal__submit { padding: 12px 36px; font-size: 12.5px; }
+}

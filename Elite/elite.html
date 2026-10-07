@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elite Residences — Thakarshi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="elite.css" />
+</head>
+<body>
+
+  <!-- =========================================
+       HEADER
+  ========================================= -->
+  <header class="elite-header">
+    <div class="elite-header-inner">
+
+      <a href="#top" class="elite-logo">
+        <img src="img/logo.png" alt="Thakarshi" class="elite-logo-img" />
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <nav class="elite-nav">
+        <span class="elite-nav-item">
+          <a href="#overview" class="elite-nav-link">Overview</a>
+          <span class="elite-nav-sep">|</span>
+        </span>
+        <span class="elite-nav-item">
+          <a href="#config" class="elite-nav-link">Configuration</a>
+          <span class="elite-nav-sep">|</span>
+        </span>
+        <span class="elite-nav-item">
+          <a href="#plans" class="elite-nav-link">Plans</a>
+          <span class="elite-nav-sep">|</span>
+        </span>
+        <span class="elite-nav-item">
+          <a href="#videos" class="elite-nav-link">Video</a>
+          <span class="elite-nav-sep">|</span>
+        </span>
+        <span class="elite-nav-item">
+          <a href="#amenities" class="elite-nav-link">Amenities</a>
+          <span class="elite-nav-sep">|</span>
+        </span>
+        <span class="elite-nav-item">
+          <a href="#advantage" class="elite-nav-link">Advantage</a>
+          <span class="elite-nav-sep">|</span>
+        </span>
+        <span class="elite-nav-item">
+          <a href="#showflat" class="elite-nav-link">Show Flat</a>
+          <span class="elite-nav-sep">|</span>
+        </span>
+        <span class="elite-nav-item">
+          <a href="#developer" class="elite-nav-link">About Developer</a>
+        </span>
+      </nav>
+
+      <button class="elite-burger" id="eliteBurger" aria-label="Open menu">☰</button>
+
+    </div>
+  </header>
+
+  <!-- MOBILE OVERLAY -->
+  <div class="elite-overlay" id="eliteOverlay"></div>
+
+  <!-- MOBILE MENU -->
+  <aside class="elite-mobile-menu" id="eliteMobileMenu">
+    <div class="elite-mobile-header">
+      <a href="#top" class="elite-logo">
+        <img src="img/logo.png" alt="Thakarshi" class="elite-logo-img" />
+      </a>
+      <button class="elite-mobile-close" id="eliteClose" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="elite-mobile-nav">
+      <a href="#overview" class="elite-mobile-link">Overview</a>
+      <a href="#config" class="elite-mobile-link">Configuration</a>
+      <a href="#plans" class="elite-mobile-link">Plans</a>
+      <a href="#videos" class="elite-mobile-link">Video</a>
+      <a href="#amenities" class="elite-mobile-link">Amenities</a>
+      <a href="#advantage" class="elite-mobile-link">Advantage</a>
+      <a href="#showflat" class="elite-mobile-link">Show Flat</a>
+      <a href="#developer" class="elite-mobile-link">About Developer</a>
+    </nav>
+    <div class="elite-mobile-cta">
+      <a href="tel:7066800900" class="elite-btn-mobile call">📞 Call Now</a>
+      <a href="#enquire" class="elite-btn-mobile enquire">Enquire Now</a>
+    </div>
+  </aside>
+
+  <!-- MOBILE BOTTOM STICKY BAR -->
+  <div class="elite-bottom-bar">
+    <a href="tel:7066800900" class="elite-bottom-btn call">📞 Call Now</a>
+    <a href="#enquire" class="elite-bottom-btn enquire">Enquire Now</a>
+  </div>
+
+<!-- =========================================
+     HERO SECTION
+========================================= -->
+<section class="elite-hero" id="top">
+  <div class="elite-hero-slider">
+    <div class="elite-hero-slide active">
+      <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=80" alt="Elite Building 1" />
+    </div>
+    <div class="elite-hero-slide">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80" alt="Elite Building 2" />
+    </div>
+    <div class="elite-hero-slide">
+      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920&q=80" alt="Elite Building 3" />
+    </div>
+    <button class="elite-hero-arrow prev" id="heroPrev" aria-label="Previous">‹</button>
+    <button class="elite-hero-arrow next" id="heroNext" aria-label="Next">›</button>
+  </div>
+
+  <div class="elite-hero-strip">
+    <div class="elite-hero-strip-track">
+      <span>30+ LIFESTYLE AMENITIES</span>
+      <span class="sep">|</span>
+      <span>UNOBSTRUCTED VIEWS</span>
+      <span class="sep">|</span>
+      <span>VAASTU COMPLIANT</span>
+      <span class="sep">|</span>
+      <span>30+ LIFESTYLE AMENITIES</span>
+      <span class="sep">|</span>
+      <span>UNOBSTRUCTED VIEWS</span>
+      <span class="sep">|</span>
+      <span>VAASTU COMPLIANT</span>
+      <span class="sep">|</span>
+    </div>
+  </div>
+</section>
+
+  <!-- =========================================
+       ABOUT PROJECT SECTION — ✅ id="overview"
+  ========================================= -->
+  <section class="elite-about" id="overview">
+    <div class="elite-about-inner">
+
+      <div class="elite-about-text">
+        <p class="elite-about-eyebrow" data-reveal="right">About Elite Residences</p>
+
+        <h2 class="elite-about-title" data-reveal="right">
+          The Next Big Thing In<br />Luxury Living Is Here
+        </h2>
+
+        <p class="elite-about-para" data-reveal="up">
+          Presenting Elite Residences — a premium residential project crafted for
+          those who value space, comfort, and modern design. Spacious 1 &amp; 2 BHK
+          homes with thoughtfully designed layouts and top-tier fittings.
+        </p>
+
+        <p class="elite-about-para" data-reveal="up">
+          Elite Residences, being the project of Kapleshwara Group — a trusted name
+          in the world of real estate — guarantees superior quality of construction.
+          Strategically located in Dombivli (E), it's well-connected to every
+          essential of daily life.
+        </p>
+      </div>
+
+      <div class="elite-about-image" data-reveal="left">
+        <img src="img/image.png" alt="Elite Residences" />
+      </div>
+
+    </div>
+  </section>
+
+<!-- =========================================
+     CONFIGURATIONS SECTION — ✅ id="config"
+========================================= -->
+<section class="elite-config" id="config">
+  <div class="elite-config-bg"></div>
+  <div class="elite-config-overlay"></div>
+
+  <div class="elite-config-inner">
+    <h2 class="elite-config-title" data-reveal="up">
+      2 BHK &amp; 3.5 BHK Apartment Configurations
+    </h2>
+
+    <div class="elite-config-divider" data-reveal="up">
+      <span class="elite-config-divider-icon">◆</span>
+    </div>
+
+    <p class="elite-config-subtitle" data-reveal="up">
+      Choose The Layout That Suits Your Lifestyle
+    </p>
+
+    <div class="elite-config-table-wrap" data-reveal="up">
+      <table class="elite-config-table">
+        <thead>
+          <tr>
+            <th>Configuration</th>
+            <th>Area (Sq.Ft)</th>
+            <th>Offer Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2 BHK with Balcony</td>
+            <td>754 sq.ft - 877 sq.ft</td>
+            <td><a href="#enquire" class="elite-config-cta">Click Here</a></td>
+          </tr>
+          <tr>
+            <td>3.5 BHK (All master bedroom) with Balcony</td>
+            <td>1124 sq.ft - 1251 sq.ft</td>
+            <td><a href="#enquire" class="elite-config-cta">Click Here</a></td>
+          </tr>
+          <tr>
+            <td>Jodi</td>
+            <td>1736 sq.ft</td>
+            <td><a href="#enquire" class="elite-config-cta">Click Here</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="elite-config-text" data-reveal="up">
+      <p>
+        Elite Residences offers thoughtfully planned 2 BHK and 3.5 BHK apartments,
+        designed for space, comfort, and natural ventilation. Every layout here has
+        been carefully crafted to make daily living more enjoyable — be it the smart
+        placement of the kitchen, wide living rooms with French windows, or the
+        private balconies that give every apartment its own corner of calm.
+      </p>
+      <p>
+        Whether you're looking to upgrade your lifestyle or buy your first dream
+        home at Elite Residences, Dombivli — these apartments are built to meet
+        both emotional and functional needs.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     FLOOR PLANS SECTION — ✅ id="plans"
+========================================= -->
+<section class="elite-plans" id="plans">
+  <div class="elite-plans-inner">
+    <div class="elite-plans-header">
+      <h2 class="elite-plans-title" data-reveal="up">Floor Plans</h2>
+      <p class="elite-plans-subtitle" data-reveal="up">
+        Thoughtfully designed layouts for modern living
+      </p>
+    </div>
+
+    <div class="elite-plans-grid">
+      <div class="elite-plan-card" data-reveal="up" data-full="img/groundfloor.webp">
+        <div class="elite-plan-image">
+          <img src="img/groundfloor.webp" alt="Ground Floor Plan" />
+        </div>
+        <p class="elite-plan-label">Ground Floor</p>
+      </div>
+
+      <div class="elite-plan-card" data-reveal="up" data-full="img/firstfloor.webp">
+        <div class="elite-plan-image">
+          <img src="img/firstfloor.webp" alt="First Floor Plan" />
+        </div>
+        <p class="elite-plan-label">First Floor</p>
+      </div>
+
+      <div class="elite-plan-card" data-reveal="up" data-full="img/secondfloor.webp">
+        <div class="elite-plan-image">
+          <img src="img/secondfloor.webp" alt="Second Floor Plan" />
+        </div>
+        <p class="elite-plan-label">Second Floor</p>
+      </div>
+
+      <div class="elite-plan-card" data-reveal="up" data-full="img/third.webp">
+        <div class="elite-plan-image">
+          <img src="img/third.webp" alt="Third Floor Plan" />
+        </div>
+        <p class="elite-plan-label">3rd to 6th , 8th to 11th & 13th floors</p>
+      </div>
+
+      <div class="elite-plan-card" data-reveal="up" data-full="img/seven-twelve.webp">
+        <div class="elite-plan-image">
+          <img src="img/seven-twelve.webp" alt="7th to 12th Floor Plan" />
+        </div>
+        <p class="elite-plan-label">7th to 12th Floor</p>
+      </div>
+
+      <div class="elite-plan-card" data-reveal="up" data-full="img/fourteen.webp">
+        <div class="elite-plan-image">
+          <img src="img/fourteen.webp" alt="14th Floor Plan" />
+        </div>
+        <p class="elite-plan-label">14th Floor</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     VIDEO SECTION — ✅ id="videos"
+========================================= -->
+<section class="video-section" id="videos">
+  <div class="video-section-inner">
+    <h2 class="video-section-title" data-reveal="up">
+      Project Walkthrough
+    </h2>
+    <p class="elite-plans-subtitle" data-reveal="up">
+      Thoughtfully designed layouts for modern living
+    </p>
+
+    <div class="video-section-frame" data-reveal="up">
+      <video
+        class="video-section-player"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+      >
+        <source src="img/elite .mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     PROJECT AMENITIES SECTION — ✅ id="amenities"
+========================================= -->
+<section class="elite-amenities" id="amenities">
+  <div class="elite-amenities-inner">
+    <div class="elite-amenities-header">
+      <h2 class="elite-amenities-title" data-reveal="up">
+        Project Amenities
+      </h2>
+      <p class="elite-amenities-subtitle" data-reveal="up">
+        30+ Amenities Including Open Air Amenities on 15th Floor
+      </p>
+    </div>
+
+    <div class="elite-amenities-carousel">
+      <button class="elite-amenity-arrow prev" id="amenityPrev" aria-label="Previous">‹</button>
+
+      <div class="elite-amenities-viewport">
+        <div class="elite-amenities-track" id="amenityTrack">
+
+          <div class="elite-amenity-card" data-reveal="up">
+            <div class="elite-amenity-image">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80" alt="Sundeck Area" />
+            </div>
+            <p class="elite-amenity-caption">Sundeck Area</p>
+          </div>
+
+          <div class="elite-amenity-card" data-reveal="up">
+            <div class="elite-amenity-image">
+              <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=900&q=80" alt="Mini Indoor Golf" />
+            </div>
+            <p class="elite-amenity-caption">Mini Indoor Golf</p>
+          </div>
+
+          <div class="elite-amenity-card" data-reveal="up">
+            <div class="elite-amenity-image">
+              <img src="https://images.unsplash.com/photo-1626248801379-51a0748a5f96?w=900&q=80" alt="Indoor Games" />
+            </div>
+            <p class="elite-amenity-caption">Indoor Games</p>
+          </div>
+
+          <div class="elite-amenity-card" data-reveal="up">
+            <div class="elite-amenity-image">
+              <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=900&q=80" alt="Swimming Pool" />
+            </div>
+            <p class="elite-amenity-caption">Swimming Pool</p>
+          </div>
+
+          <div class="elite-amenity-card" data-reveal="up">
+            <div class="elite-amenity-image">
+              <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=900&q=80" alt="Modern Gym" />
+            </div>
+            <p class="elite-amenity-caption">Modern Gym</p>
+          </div>
+
+          <div class="elite-amenity-card" data-reveal="up">
+            <div class="elite-amenity-image">
+              <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=900&q=80" alt="Kids Play Area" />
+            </div>
+            <p class="elite-amenity-caption">Kids Play Area</p>
+          </div>
+
+        </div>
+      </div>
+
+      <button class="elite-amenity-arrow next" id="amenityNext" aria-label="Next">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     ADVANTAGE — ✅ id="advantage" (Why Buy Section)
+========================================= -->
+<section class="why-buy" id="advantage">
+  <div class="why-buy__inner">
+
+    <h2 class="why-buy__heading">Why Buy at Elite Galaxy Room</h2>
+    <p class="why-buy__sub">Thoughtful design, prime connectivity, and lifestyle-first living — all in one address.</p>
+
+    <div class="why-buy__grid">
+
+      <div class="why-buy__item">
+        <div class="why-buy__icon">
+          <svg viewBox="0 0 64 64">
+            <rect x="14" y="10" width="36" height="40" rx="6"/>
+            <path d="M14 30h36"/>
+            <circle cx="24" cy="42" r="3"/>
+            <circle cx="40" cy="42" r="3"/>
+            <path d="M22 18h6v6h-6zM36 18h6v6h-6z"/>
+            <path d="M22 54l-4 6M42 54l4 6"/>
+            <path d="M28 10V6M36 10V6"/>
+          </svg>
+        </div>
+        <p class="why-buy__text">Proposed Metro Station</p>
+      </div>
+
+      <div class="why-buy__item">
+        <div class="why-buy__icon">
+          <svg viewBox="0 0 64 64">
+            <circle cx="32" cy="26" r="14"/>
+            <path d="M32 18l2.4 4.8 5.3.8-3.8 3.7.9 5.3L32 30l-4.8 2.6.9-5.3-3.8-3.7 5.3-.8L32 18z"/>
+            <path d="M22 38l-4 18 14-6 14 6-4-18"/>
+          </svg>
+        </div>
+        <p class="why-buy__text">RERA Approved</p>
+      </div>
+
+      <div class="why-buy__item">
+        <div class="why-buy__icon">
+          <svg viewBox="0 0 64 64">
+            <path d="M10 30l22-22h18v18l-22 22z"/>
+            <circle cx="42" cy="16" r="3"/>
+            <path d="M22 40h8M26 36v8"/>
+            <path d="M38 42h8"/>
+          </svg>
+        </div>
+        <p class="why-buy__text">Affordable Price</p>
+      </div>
+
+      <div class="why-buy__item">
+        <div class="why-buy__icon">
+          <svg viewBox="0 0 64 64">
+            <path d="M8 56V24h12l6-8h12l6 8h12v32"/>
+            <path d="M8 40h48"/>
+            <path d="M26 40v16M38 40v16"/>
+            <circle cx="20" cy="32" r="2"/>
+            <circle cx="44" cy="32" r="2"/>
+          </svg>
+        </div>
+        <p class="why-buy__text">Excellent rail, road &amp; metro connectivity</p>
+      </div>
+
+      <div class="why-buy__item">
+        <div class="why-buy__icon">
+          <svg viewBox="0 0 64 64">
+            <path d="M8 24l24-14 24 14"/>
+            <path d="M12 24v24M52 24v24"/>
+            <path d="M22 24v24M32 24v24M42 24v24"/>
+            <path d="M8 48h48"/>
+            <path d="M6 54h52"/>
+          </svg>
+        </div>
+        <p class="why-buy__text">99% Loan Available From All Nationalized Banks</p>
+      </div>
+
+      <div class="why-buy__item">
+        <div class="why-buy__icon">
+          <svg viewBox="0 0 64 64">
+            <path d="M32 8l6 14h14l-11 9 4 15-13-9-13 9 4-15-11-9h14z"/>
+            <circle cx="32" cy="32" r="3"/>
+          </svg>
+        </div>
+        <p class="why-buy__text">World class lifestyle amenities</p>
+      </div>
+
+      <div class="why-buy__item">
+        <div class="why-buy__icon">
+          <svg viewBox="0 0 64 64">
+            <path d="M32 56s-16-14-16-26a16 16 0 0 1 32 0c0 12-16 26-16 26z"/>
+            <circle cx="32" cy="30" r="6"/>
+          </svg>
+        </div>
+        <p class="why-buy__text">Prime Location</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     SHOW FLATS SHOWCASE — ✅ id="showflat"
+========================================= -->
+<section class="elite-showcase" id="showflat">
+  <div class="elite-showcase-inner">
+    <div class="elite-showcase-header" data-reveal="up">
+      <h2 class="elite-showcase-title">Show <span>Flats</span></h2>
+      <p class="elite-showcase-subtitle">
+        Take a virtual tour of our fully-furnished sample apartments
+      </p>
+    </div>
+
+    <div class="elite-showcase-slider">
+      <button class="elite-showcase-arrow prev" id="showcasePrev" aria-label="Previous">‹</button>
+
+      <div class="elite-showcase-viewport">
+        <div class="elite-showcase-track" id="showcaseTrack">
+
+          <div class="elite-showcase-slide">
+            <div class="elite-showcase-img">
+              <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=900&q=80" alt="Dining Area" />
+            </div>
+            <p class="elite-showcase-caption">Dining Area</p>
+          </div>
+
+          <div class="elite-showcase-slide active">
+            <div class="elite-showcase-img">
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900&q=80" alt="Master Bedroom" />
+            </div>
+            <p class="elite-showcase-caption">Master Bedroom</p>
+          </div>
+
+          <div class="elite-showcase-slide">
+            <div class="elite-showcase-img">
+              <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=900&q=80" alt="Bedroom" />
+            </div>
+            <p class="elite-showcase-caption">Bedroom</p>
+          </div>
+
+          <div class="elite-showcase-slide">
+            <div class="elite-showcase-img">
+              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80" alt="Living Room" />
+            </div>
+            <p class="elite-showcase-caption">Living Room</p>
+          </div>
+
+          <div class="elite-showcase-slide">
+            <div class="elite-showcase-img">
+              <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=900&q=80" alt="Balcony" />
+            </div>
+            <p class="elite-showcase-caption">Balcony</p>
+          </div>
+
+          <div class="elite-showcase-slide">
+            <div class="elite-showcase-img">
+              <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=900&q=80" alt="Kitchen" />
+            </div>
+            <p class="elite-showcase-caption">Modular Kitchen</p>
+          </div>
+
+        </div>
+      </div>
+
+      <button class="elite-showcase-arrow next" id="showcaseNext" aria-label="Next">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     ABOUT DEVELOPER SECTION — ✅ id="developer"
+========================================= -->
+<section class="elite-dev" id="developer">
+  <div class="elite-dev-inner">
+
+    <div class="elite-dev-logo">
+      <img
+        src="img/logo.png"
+        alt="Thakarshi Lifespaces"
+        onerror="this.src='https://via.placeholder.com/180x180/f0f4f8/1a9bd7?text=Thakarshi'"
+      />
+    </div>
+
+    <p class="elite-dev-eyebrow">About Thakarshilifespaces</p>
+
+    <h2 class="elite-dev-title">Building Excellence Since 35 Years</h2>
+
+    <p class="elite-dev-desc">
+      With over 35 years of experience in the construction industry, Globe Group
+      has been a prominent name since its establishment in 1999. We have made
+      significant strides in various sectors, including residential, industrial,
+      commercial, and hospitality. Our reputation for excellence is reflected in
+      our successful projects across Dombivli, Ambernath, Murbad, Navi Mumbai,
+      and Pune. Notable projects such as Globe Estate, Globe Business Square,
+      Globe Pinnacle, Globe Arcade, and Globe Business Park have revolutionised
+      the working standards in these areas. Our flagship residential project,
+      Globe Paradise, is among the tallest towers in Dombivli, featuring an
+      expansive 24,000 sq. ft. clubhouse that epitomises luxury living.
+    </p>
+
+    <a
+      href="https://www.thakarshilifespaces.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="elite-dev-website"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+      <span>www.thakarshilifespaces.com</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- =========================================
+     ENQUIRY MODAL
+========================================= -->
+<div class="eq-modal" id="enquiryModal">
+  <div class="eq-overlay" data-close></div>
+
+  <div class="eq-box" role="dialog" aria-modal="true">
+    <div class="eq-header">
+      <h3 class="eq-title">Enquire Now</h3>
+      <button class="eq-close" id="enquiryModalClose" aria-label="Close">✕</button>
+    </div>
+
+    <form class="eq-form" id="eliteEnquiryForm" novalidate>
+      <input type="text" name="name" class="eq-input" placeholder="Name*" required autocomplete="name" />
+      <input type="email" name="email" class="eq-input" placeholder="Email*" required autocomplete="email" />
+      <input type="tel" name="phone" class="eq-input" placeholder="Mobile*" required pattern="[0-9]{10}" maxlength="10" autocomplete="tel" />
+
+      <select name="inventory" class="eq-input eq-select" required>
+        <option value="" disabled selected>Select Inventory</option>
+        <option value="1bhk">1 BHK</option>
+        <option value="2bhk">2 BHK</option>
+        <option value="3.5bhk">3.5 BHK</option>
+        <option value="jodi">Jodi</option>
+      </select>
+
+      <button type="submit" class="eq-submit">SUBMIT</button>
+
+      <p class="eq-dnc">
+        By submitting details, I agree and authorize Kapleshwara Residency to
+        contact me. This will override the registry with DNC/NDNC.
+      </p>
+
+      <p class="eq-success" id="eliteEnquirySuccess">
+        ✅ Thank you! We'll get in touch shortly.
+      </p>
+    </form>
+  </div>
+</div>
+
+<!-- =========================================
+     FOOTER END
+========================================= -->
+<footer class="footer-end">
+  <div class="footer-end-top">
+    <h3 class="footer-end-brand">ELITE RESIDENCES</h3>
+
+    <p class="footer-end-address">
+      <span class="footer-end-icon-pin">📌</span>
+      Site address: Elite Residences, Dombivli East, Thane - 421201
+    </p>
+
+    <p class="footer-end-terms">
+      By submitting your details you agree to the our Terms &amp; Conditions
+    </p>
+
+    <div class="footer-end-divider"></div>
+
+    <p class="footer-end-rera">
+      <span class="footer-end-icon-rera">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <text x="12" y="16" text-anchor="middle" font-size="10" font-weight="700" fill="currentColor" stroke="none">R</text>
+        </svg>
+      </span>
+      <span>MahaRERA Reg. No.: P51700049543. Project details available on website: https://maharera.maharashtra.gov.in under registered projects.</span>
+    </p>
+
+    <div class="footer-end-qr">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.thakarshilifespaces.com/" alt="QR Code" />
+    </div>
+
+    <p class="footer-end-copy">
+      © ELITE RESIDENCES. ALL RIGHTS RESERVED <span id="footerYear">2025</span>.
+    </p>
+  </div>
+
+  <div class="footer-end-bar">
+    <div class="footer-end-bar-inner">
+      <a href="#">Privacy Policy</a>
+      <span class="footer-end-sep">|</span>
+      <a href="#">Terms &amp; Conditions</a>
+      <span class="footer-end-sep">|</span>
+      <a href="#">Disclaimer</a>
+      <span class="footer-end-sep">|</span>
+      <a href="#">Cookies Policy</a>
+      <span class="footer-end-sep">|</span>
+      <a href="#">Grievance Redressal Policy</a>
+      <span class="footer-end-sep">|</span>
+      <a href="#">Customer Grievance Redressal Compliances</a>
+    </div>
+  </div>
+</footer>
+
+<script src="elite-animations.js"></script>
+<script src="elite.js"></script>
+</body>
+</html>
