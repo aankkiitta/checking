@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paradise</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="paradise.css" />
+</head>
+<body>
+
+  <!-- =========================================
+       HEADER
+  ========================================= -->
+  <header class="prd-header" id="prdHeader">
+    <div class="prd-header__inner">
+
+      <a href="#top" class="prd-logo">
+        <img src="img/logo.png" alt="Paradise" class="prd-logo__img" />
+      </a>
+
+      <nav class="prd-nav">
+        <a href="#overview" class="prd-nav__link">Overview</a>
+        <a href="#config" class="prd-nav__link">Configuration</a>
+        <a href="#plans" class="prd-nav__link">Plans</a>
+        <a href="#amenities" class="prd-nav__link">Amenities</a>
+        <a href="#gallery" class="prd-nav__link">Gallery</a>
+        <a href="#location" class="prd-nav__link">Location</a>
+        <a href="#developer" class="prd-nav__link">Developer</a>
+      </nav>
+
+      <div class="prd-header__actions">
+        <a href="#" class="prd-header__cta" data-open-modal>
+          Enquire Now
+        </a>
+
+        <button class="prd-burger" id="prdBurger" aria-label="Open menu" type="button">
+          <span class="prd-burger__line"></span>
+          <span class="prd-burger__line"></span>
+          <span class="prd-burger__line"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- =========================================
+       SIDE DRAWER (mobile menu)
+  ========================================= -->
+  <div class="prd-drawer" id="prdDrawer">
+    <div class="prd-drawer__overlay" data-drawer-close></div>
+
+    <aside class="prd-drawer__panel">
+
+      <div class="prd-drawer__head">
+        <a href="#top" class="prd-logo prd-logo--drawer">
+          <img src="img/logo.png" alt="Paradise" class="prd-logo__img" />
+        </a>
+        <button class="prd-drawer__close" data-drawer-close aria-label="Close menu" type="button">✕</button>
+      </div>
+
+      <nav class="prd-drawer__nav">
+        <a href="#overview" class="prd-drawer__link">Overview</a>
+        <a href="#config" class="prd-drawer__link">Configuration</a>
+        <a href="#plans" class="prd-drawer__link">Plans</a>
+        <a href="#amenities" class="prd-drawer__link">Amenities</a>
+        <a href="#gallery" class="prd-drawer__link">Gallery</a>
+        <a href="#location" class="prd-drawer__link">Location</a>
+        <a href="#developer" class="prd-drawer__link">Developer</a>
+      </nav>
+
+      <div class="prd-drawer__footer">
+        <a href="#" class="prd-drawer__cta" data-open-modal>
+          Enquire Now
+        </a>
+      </div>
+
+    </aside>
+  </div>
+
+
+  <!-- =========================================
+       HERO
+  ========================================= -->
+  <section class="prd-hero" id="top">
+
+    <!-- Background image with slow zoom -->
+    <div class="prd-hero__bg"></div>
+
+    <!-- Overlay -->
+    <div class="prd-hero__overlay"></div>
+
+    <!-- Content -->
+    <div class="prd-hero__content">
+      <p class="prd-hero__eyebrow">New Launch</p>
+      <h1 class="prd-hero__title">PARADISE</h1>
+      <p class="prd-hero__sub">Luxury Residences</p>
+      <p class="prd-hero__location">Kolshet Road, Thane (W)</p>
+    </div>
+
+    <!-- ✅ QR CORNER CARD (bottom-right) -->
+    <div class="prd-qr-card">
+
+      <p class="prd-qr-card__title">RERA detail</p>
+
+      <div class="prd-qr-card__qr">
+        <img src="img/qr.png" alt="Scan QR" />
+      </div>
+
+      <p class="prd-qr-card__reg">Reg. No: P51700020175</p>
+
+      <a href="#overview" class="prd-qr-card__cta">
+        <span>Click Here For More</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </a>
+
+    </div>
+
+    <!-- ✅ OFFER STRIP (scalloped top + marquee) -->
+    <div class="prd-offer">
+
+      <!-- Scalloped top edge -->
+      <div class="prd-offer__scallop" aria-hidden="true">
+        <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="
+            M0,40 L0,20
+            Q30,0 60,20 Q90,0 120,20 Q150,0 180,20 Q210,0 240,20
+            Q270,0 300,20 Q330,0 360,20 Q390,0 420,20 Q450,0 480,20
+            Q510,0 540,20 Q570,0 600,20 Q630,0 660,20 Q690,0 720,20
+            Q750,0 780,20 Q810,0 840,20 Q870,0 900,20 Q930,0 960,20
+            Q990,0 1020,20 Q1050,0 1080,20 Q1110,0 1140,20
+            Q1170,0 1200,20 Q1230,0 1260,20 Q1290,0 1320,20
+            Q1350,0 1380,20 Q1410,0 1440,20 L1440,40 Z
+          " fill="#0f4c5c"/>
+        </svg>
+      </div>
+
+      <!-- Marquee content -->
+      <div class="prd-offer__strip">
+        <div class="prd-offer__track">
+
+          <!-- Group 1 -->
+          <span class="prd-offer__item">◆ 2 &amp; 3 BHK RESIDENCES</span>
+          <span class="prd-offer__item">◆ JODI FLATS AVAILABLE</span>
+          <span class="prd-offer__item">◆ WELL-CONNECTED LOCATION IN THANE (W)</span>
+          <span class="prd-offer__item">◆ NEAR KOLSHET ROAD</span>
+          <span class="prd-offer__item">◆ WORLD-CLASS AMENITIES</span>
+          <span class="prd-offer__item">◆ EXCELLENT RAIL, ROAD &amp; METRO CONNECTIVITY</span>
+          <span class="prd-offer__item">◆ SCHOOLS &amp; HOSPITALS NEARBY</span>
+          <span class="prd-offer__item">◆ RERA APPROVED PROJECT</span>
+
+          <!-- Group 2 — duplicate for seamless loop -->
+          <span class="prd-offer__item">◆ 2 &amp; 3 BHK RESIDENCES</span>
+          <span class="prd-offer__item">◆ JODI FLATS AVAILABLE</span>
+          <span class="prd-offer__item">◆ WELL-CONNECTED LOCATION IN THANE (W)</span>
+          <span class="prd-offer__item">◆ NEAR KOLSHET ROAD</span>
+          <span class="prd-offer__item">◆ WORLD-CLASS AMENITIES</span>
+          <span class="prd-offer__item">◆ EXCELLENT RAIL, ROAD &amp; METRO CONNECTIVITY</span>
+          <span class="prd-offer__item">◆ SCHOOLS &amp; HOSPITALS NEARBY</span>
+          <span class="prd-offer__item">◆ RERA APPROVED PROJECT</span>
+
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========================================
+     ABOUT SECTION
+========================================= -->
+<section class="prd-about" id="overview">
+  <div class="prd-about__inner">
+
+    <!-- LEFT — Image Card with slider -->
+    <div class="prd-about__media">
+
+      <!-- ✅ Mobile-only write-up -->
+      <div class="prd-about__layer-text">
+        <h3 class="prd-about__layer-title">
+          Welcome to <span>Paradise Valley</span>
+        </h3>
+        <p class="prd-about__layer-sub">
+          by <strong>Thakarshilifespace</strong>
+        </p>
+      </div>
+
+      <div class="prd-about__card">
+
+        <!-- Counter top-right -->
+        <div class="prd-about__counter">
+          <span class="prd-about__counter-current" id="prdAboutCurrent">1</span>
+          <span class="prd-about__counter-sep">/</span>
+          <span class="prd-about__counter-total" id="prdAboutTotal">3</span>
+        </div>
+
+        <!-- Slides -->
+        <div class="prd-about__slides" id="prdAboutSlides">
+          <div class="prd-about__slide is-active">
+            <img
+              src="img/hero.webp"
+              alt="Paradise architecture"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="prd-about__slide">
+            <img
+              src="img/frontvilla2.jpeg"
+              alt="Paradise interior"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="prd-about__slide">
+            <img
+              src="img/frontvilla3.jpeg"
+              alt="Paradise lifestyle"
+              loading="lazy"
+            >
+          </div>
+        </div>
+
+        <!-- Arrows -->
+        <button class="prd-about__arrow prd-about__arrow--prev" id="prdAboutPrev" aria-label="Previous image" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+
+        <button class="prd-about__arrow prd-about__arrow--next" id="prdAboutNext" aria-label="Next image" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT — Text + Features -->
+    <div class="prd-about__content">
+      <h2 class="prd-about__title">ABOUT</h2>
+
+      <p class="prd-about__desc">
+        At Paradise, you will experience the quality of life with the quality of
+        design. Each apartment is designed with extreme precision to deliver the
+        finest at affordable prices. These aesthetic residences are built with
+        stability to nurture long-term comfort — a mesmerizing green ambience
+        that offers a relaxed atmosphere and a positive environment, with the
+        convenience of everything just around the corner.
+      </p>
+
+      <ul class="prd-about__features">
+
+        <!-- Feature 1 — Luxury Villas -->
+        <li class="prd-about__feature">
+          <span class="prd-about__feature-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M32 56 C32 56 14 42 14 26 A18 18 0 0 1 50 26 C50 42 32 56 32 56 Z"/>
+              <path d="M18 46 L46 46"/>
+              <path d="M20 50 L44 50"/>
+              <circle cx="32" cy="26" r="6"/>
+            </svg>
+          </span>
+          <span class="prd-about__feature-text">
+            <strong>168</strong> Luxury Villas
+          </span>
+        </li>
+
+        <!-- Feature 2 — Low-Density Enclave -->
+        <li class="prd-about__feature">
+          <span class="prd-about__feature-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="6" y="6" width="22" height="22" rx="1"/>
+              <rect x="36" y="6" width="22" height="22" rx="1"/>
+              <rect x="6" y="36" width="22" height="22" rx="1"/>
+              <rect x="36" y="36" width="22" height="22" rx="1"/>
+            </svg>
+          </span>
+          <span class="prd-about__feature-text">
+            <strong>5.2 Acres</strong> Low-Density Enclave
+          </span>
+        </li>
+
+        <!-- Feature 3 — Resort-Style Amenities -->
+        <li class="prd-about__feature">
+          <span class="prd-about__feature-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="10" y="18" width="10" height="40" rx="1"/>
+              <rect x="24" y="10" width="12" height="48" rx="1"/>
+              <rect x="40" y="22" width="10" height="36" rx="1"/>
+              <path d="M24 10 L30 4 L36 10"/>
+              <path d="M13 26 L17 26"/>
+              <path d="M13 32 L17 32"/>
+              <path d="M13 38 L17 38"/>
+              <path d="M13 44 L17 44"/>
+              <path d="M27 18 L33 18"/>
+              <path d="M27 24 L33 24"/>
+              <path d="M27 30 L33 30"/>
+              <path d="M27 36 L33 36"/>
+              <path d="M43 30 L47 30"/>
+              <path d="M43 36 L47 36"/>
+              <path d="M43 42 L47 42"/>
+            </svg>
+          </span>
+          <span class="prd-about__feature-text">
+            <strong>25+</strong> Resort-Style Amenities
+          </span>
+        </li>
+
+        <!-- Feature 4 — Main Road To City Center -->
+        <li class="prd-about__feature">
+          <span class="prd-about__feature-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="32" cy="32" r="22"/>
+              <path d="M32 18 L32 32 L42 38"/>
+            </svg>
+          </span>
+          <span class="prd-about__feature-text">
+            <strong>12 Mins</strong> Main Road To City Center
+          </span>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+<section class="prd-config" id="config">
+  <div class="prd-config__inner">
+
+    <!-- HEADING -->
+    <div class="prd-config__head">
+      <p class="prd-config__eyebrow">Villas</p>
+      <h2 class="prd-config__title">Choose Your Residence</h2>
+      <span class="prd-config__divider"></span>
+    </div>
+
+    <!-- Mobile-only hint -->
+    <p class="prd-config__mobile-hint">* Tap on card to see image</p>
+
+    <!-- GRID — 2x2 -->
+    <div class="prd-config__grid">
+
+      <!-- CARD 1 — The Amalfi (WHITE) -->
+      <div class="prd-config__card">
+        <div class="prd-config__card-inner">
+          <div class="prd-config__front">
+            <h3 class="prd-config__card-title">The Amalfi</h3>
+            <p class="prd-config__card-area">3,450 Sq. Ft.<sup>*</sup></p>
+            <p class="prd-config__card-tag">3 Car Park</p>
+            <p class="prd-config__card-desc">
+              Private courtyard, ground floor guest suite, and panoramic rooftop terrace.
+            </p>
+            <div class="prd-config__footer">
+              <span class="prd-config__icon">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 4 L26 14 L36 14 L28 22 L32 32 L20 26 L8 32 L12 22 L4 14 L14 14 Z"/>
+                </svg>
+              </span>
+              <a href="#" class="prd-config__enquire-link" data-open-modal>Enquire Now</a>
+            </div>
+          </div>
+
+          <div class="prd-config__back">
+            <img src="img/frontvilla.jpeg">
+            <div class="prd-config__back-overlay"></div>
+            <div class="prd-config__back-content">
+              <p class="prd-config__back-title">The Amalfi</p>
+              <p class="prd-config__back-area">3,450 Sq. Ft. · 3 Car Park</p>
+              <a href="#" class="prd-config__back-enquire" data-open-modal>
+                Enquire Now
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 — Portofino Grande (TEAL) -->
+      <div class="prd-config__card prd-config__card--colored">
+        <div class="prd-config__card-inner">
+          <div class="prd-config__front">
+            <h3 class="prd-config__card-title">Portofino Grande</h3>
+            <p class="prd-config__card-area">4,250 Sq. Ft.<sup>*</sup></p>
+            <p class="prd-config__card-tag">Media Room</p>
+            <p class="prd-config__card-desc">
+              Private wine cellar, spa-inspired bathrooms, and landscaped garden.
+            </p>
+            <div class="prd-config__footer">
+              <span class="prd-config__icon">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 4 L26 14 L36 14 L28 22 L32 32 L20 26 L8 32 L12 22 L4 14 L14 14 Z"/>
+                </svg>
+              </span>
+              <a href="#" class="prd-config__enquire-link" data-open-modal>Enquire Now</a>
+            </div>
+          </div>
+
+          <div class="prd-config__back">
+            <img src="img/frontvilla2.jpeg"Portofino Grande" loading="lazy">
+            <div class="prd-config__back-overlay"></div>
+            <div class="prd-config__back-content">
+              <p class="prd-config__back-title">Portofino Grande</p>
+              <p class="prd-config__back-area">4,250 Sq. Ft. · Media Room</p>
+              <a href="#" class="prd-config__back-enquire" data-open-modal>
+                Enquire Now
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 — Bellagio Estate (TEAL) -->
+      <div class="prd-config__card prd-config__card--colored">
+        <div class="prd-config__card-inner">
+          <div class="prd-config__front">
+            <h3 class="prd-config__card-title">Bellagio Estate</h3>
+            <p class="prd-config__card-area">5,200 Sq. Ft.<sup>*</sup></p>
+            <p class="prd-config__card-tag">Private Spa</p>
+            <p class="prd-config__card-desc">
+              Dedicated home gym, elevator shaft, and expansive terrace with jacuzzi.
+            </p>
+            <div class="prd-config__footer">
+              <span class="prd-config__icon">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 4 L26 14 L36 14 L28 22 L32 32 L20 26 L8 32 L12 22 L4 14 L14 14 Z"/>
+                </svg>
+              </span>
+              <a href="#" class="prd-config__enquire-link" data-open-modal>Enquire Now</a>
+            </div>
+          </div>
+
+          <div class="prd-config__back">
+            <img src="img/frontvilla3.jpeg" alt="Bellagio Estate" loading="lazy">
+            <div class="prd-config__back-overlay"></div>
+            <div class="prd-config__back-content">
+              <p class="prd-config__back-title">Bellagio Estate</p>
+              <p class="prd-config__back-area">5,200 Sq. Ft. · Private Spa</p>
+              <a href="#" class="prd-config__back-enquire" data-open-modal>
+                Enquire Now
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 — Villa Sereno (WHITE) -->
+      <div class="prd-config__card">
+        <div class="prd-config__card-inner">
+          <div class="prd-config__front">
+            <h3 class="prd-config__card-title">Villa Sereno</h3>
+            <p class="prd-config__card-area">3,850 Sq. Ft.<sup>*</sup></p>
+            <p class="prd-config__card-tag">Infinity Pool</p>
+            <p class="prd-config__card-desc">
+              Private plunge pool, double-height living room, and landscaped wrap-around deck.
+            </p>
+            <div class="prd-config__footer">
+              <span class="prd-config__icon">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 4 L26 14 L36 14 L28 22 L32 32 L20 26 L8 32 L12 22 L4 14 L14 14 Z"/>
+                </svg>
+              </span>
+              <a href="#" class="prd-config__enquire-link" data-open-modal>Enquire Now</a>
+            </div>
+          </div>
+
+          <div class="prd-config__back">
+            <img src="img/frontvilla3.jpeg" alt="Villa Sereno" loading="lazy">
+            <div class="prd-config__back-overlay"></div>
+            <div class="prd-config__back-content">
+              <p class="prd-config__back-title">Villa Sereno</p>
+              <p class="prd-config__back-area">3,850 Sq. Ft. · Infinity Pool</p>
+              <a href="#" class="prd-config__back-enquire" data-open-modal>
+                Enquire Now
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Desktop hint -->
+    <p class="prd-config__global-hint">* Click to see image</p>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+    <!-- =========================================
+     FLOOR PLANS SECTION
+========================================= -->
+<section class="prd-plans" id="plans">
+  <div class="prd-plans__inner">
+
+    <!-- HEADING -->
+    <div class="prd-plans__head">
+      <p class="prd-plans__eyebrow">Layouts</p>
+      <h2 class="prd-plans__title">
+        <span>Villa</span> Plans
+      </h2>
+      <span class="prd-plans__divider"></span>
+    </div>
+
+    <!-- ROW 1 — The Amalfi -->
+    <div class="prd-plans__row">
+      <div class="prd-plans__content">
+        <h3 class="prd-plans__name">The Amalfi</h3>
+        <p class="prd-plans__tagline">Elegant spaces designed for refined villa living</p>
+
+        <h4 class="prd-plans__lead">
+          Thoughtfully planned spaces for comfort, privacy and effortless living.
+        </h4>
+
+        <p class="prd-plans__desc">
+          Discover The Amalfi, a beautifully planned luxury villa designed with
+          spacious interiors, a private courtyard and seamless indoor-outdoor
+          living. Every space is thoughtfully crafted to create a comfortable
+          and sophisticated residential experience.
+        </p>
+
+        <ul class="prd-plans__specs">
+          <li>
+            <span class="prd-plans__label">Carpet area:</span>
+            <span class="prd-plans__value">3,450 Sq. Ft. *</span>
+          </li>
+          <li>
+            <span class="prd-plans__label">Configuration:</span>
+            <span class="prd-plans__value">Luxury Villa Residence</span>
+          </li>
+          <li>
+            <span class="prd-plans__label">Highlights:</span>
+            <span class="prd-plans__value">Private Courtyard • Guest Suite • Rooftop Terrace</span>
+          </li>
+        </ul>
+
+        <a href="#" class="prd-plans__btn" data-open-modal>
+          Enquire Now
+        </a>
+      </div>
+
+      <div class="prd-plans__media">
+        <img
+          src="img/floorvilla1.jpeg"
+          alt="The Amalfi Floor Plan"
+          loading="lazy"
+        >
+      </div>
+    </div>
+
+    <!-- ROW 2 — Portofino Grande (reverse) -->
+    <div class="prd-plans__row prd-plans__row--reverse">
+      <div class="prd-plans__content">
+        <h3 class="prd-plans__name">Portofino Grande</h3>
+        <p class="prd-plans__tagline">Generous spaces crafted for elevated living</p>
+
+        <h4 class="prd-plans__lead">
+          A refined villa designed for comfort, entertainment and privacy.
+        </h4>
+
+        <p class="prd-plans__desc">
+          Discover Portofino Grande, an expansive luxury residence featuring
+          generous living spaces, a private media room and beautifully
+          landscaped surroundings. Designed for those who appreciate space,
+          elegance and modern comfort.
+        </p>
+
+        <ul class="prd-plans__specs">
+          <li>
+            <span class="prd-plans__label">Carpet area:</span>
+            <span class="prd-plans__value">4,250 Sq. Ft. *</span>
+          </li>
+          <li>
+            <span class="prd-plans__label">Configuration:</span>
+            <span class="prd-plans__value">Luxury Villa Residence</span>
+          </li>
+          <li>
+            <span class="prd-plans__label">Highlights:</span>
+            <span class="prd-plans__value">Media Room • Private Wine Cellar • Landscaped Garden</span>
+          </li>
+        </ul>
+
+        <a href="#" class="prd-plans__btn" data-open-modal>
+          Enquire Now
+        </a>
+      </div>
+
+      <div class="prd-plans__media">
+        <img
+          src="img/floorvilla2.jpeg"
+          alt="Portofino Grande Floor Plan"
+          loading="lazy"
+        >
+      </div>
+    </div>
+
+    <!-- ROW 3 — Bellagio Estate -->
+    <div class="prd-plans__row">
+      <div class="prd-plans__content">
+        <h3 class="prd-plans__name">Bellagio Estate</h3>
+        <p class="prd-plans__tagline">Expansive luxury designed for an exceptional lifestyle</p>
+
+        <h4 class="prd-plans__lead">
+          A grand residence where space, wellness and sophistication come together.
+        </h4>
+
+        <p class="prd-plans__desc">
+          Discover Bellagio Estate, an expansive luxury villa designed for an
+          elevated lifestyle. With a dedicated home gym, private spa, elevator
+          provision and an expansive terrace, every detail is created for
+          premium everyday living.
+        </p>
+
+        <ul class="prd-plans__specs">
+          <li>
+            <span class="prd-plans__label">Carpet area:</span>
+            <span class="prd-plans__value">5,200 Sq. Ft. *</span>
+          </li>
+          <li>
+            <span class="prd-plans__label">Configuration:</span>
+            <span class="prd-plans__value">Luxury Villa Residence</span>
+          </li>
+          <li>
+            <span class="prd-plans__label">Highlights:</span>
+            <span class="prd-plans__value">Private Spa • Home Gym • Elevator • Jacuzzi Terrace</span>
+          </li>
+        </ul>
+
+        <a href="#" class="prd-plans__btn" data-open-modal>
+          Enquire Now
+        </a>
+      </div>
+
+      <div class="prd-plans__media">
+        <img
+          src="img/floorvilla3.jpeg"
+          alt="Bellagio Estate Floor Plan"
+          loading="lazy"
+        >
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========================================
+     AMENITIES SECTION
+========================================= -->
+<section class="prd-amenities" id="amenities">
+  <div class="prd-amenities__inner">
+
+    <!-- HEADING -->
+    <div class="prd-amenities__head">
+      <h2 class="prd-amenities__title">Amenities</h2>
+      <span class="prd-amenities__divider"></span>
+    </div>
+
+    <!-- SLIDER -->
+    <div class="prd-amenities__slider">
+      <div class="prd-amenities__track" id="prdAmenitiesTrack">
+
+        <!-- 1. Jacuzzi -->
+        <div class="prd-amenities__item">
+          <span class="prd-amenities__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 32 L56 32 L56 42 C56 47 52 51 47 51 L17 51 C12 51 8 47 8 42 Z"/>
+              <path d="M20 51 L20 56 M32 51 L32 56 M44 51 L44 56"/>
+              <path d="M24 32 L24 22 C24 19 26 17 29 17 L31 17 C34 17 36 19 36 22"/>
+              <path d="M40 22 C41 24 41 26 40 28"/>
+              <path d="M45 22 C46 24 46 26 45 28"/>
+            </svg>
+          </span>
+          <span class="prd-amenities__text">Jacuzzi</span>
+        </div>
+
+        <!-- 2. Indoor Games Room -->
+        <div class="prd-amenities__item">
+          <span class="prd-amenities__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="12" y="18" width="24" height="24" rx="2"/>
+              <circle cx="20" cy="26" r="1.5"/>
+              <circle cx="28" cy="34" r="1.5"/>
+              <circle cx="20" cy="34" r="1.5"/>
+              <circle cx="28" cy="26" r="1.5"/>
+              <circle cx="46" cy="36" r="6"/>
+              <path d="M46 30 L46 22"/>
+              <path d="M40 50 L40 54 M52 50 L52 54"/>
+            </svg>
+          </span>
+          <span class="prd-amenities__text">Indoor Games Room</span>
+        </div>
+
+        <!-- 3. Plaza Area -->
+        <div class="prd-amenities__item">
+          <span class="prd-amenities__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M32 14 L32 30"/>
+              <path d="M32 14 C28 14 26 18 28 22 C30 26 34 26 36 22 C38 18 36 14 32 14 Z"/>
+              <path d="M22 34 L22 26 M42 34 L42 26"/>
+              <circle cx="22" cy="24" r="3"/>
+              <circle cx="42" cy="24" r="3"/>
+              <path d="M14 40 L50 40"/>
+              <path d="M32 34 L32 40"/>
+              <path d="M24 40 L24 46 M40 40 L40 46"/>
+              <path d="M12 46 L52 46"/>
+            </svg>
+          </span>
+          <span class="prd-amenities__text">Plaza Area</span>
+        </div>
+
+        <!-- 4. Lap Pool -->
+        <div class="prd-amenities__item">
+          <span class="prd-amenities__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="10" y="22" width="44" height="16" rx="2"/>
+              <path d="M10 30 L54 30"/>
+              <path d="M10 44 C14 42 18 42 22 44 C26 46 30 46 34 44 C38 42 42 42 46 44 C50 46 54 46 54 44"/>
+              <path d="M16 22 L16 18 M24 22 L24 18 M32 22 L32 18 M40 22 L40 18 M48 22 L48 18"/>
+            </svg>
+          </span>
+          <span class="prd-amenities__text">Lap Pool</span>
+        </div>
+
+        <!-- 5. Swimming Pool -->
+        <div class="prd-amenities__item">
+          <span class="prd-amenities__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 28 L12 28 L16 40 L48 40 L52 28 L56 28"/>
+              <path d="M8 48 C14 44 18 44 24 48 C30 52 34 52 40 48 C46 44 50 44 56 48"/>
+              <circle cx="44" cy="16" r="4"/>
+              <path d="M40 20 L36 28"/>
+              <path d="M20 16 L20 24"/>
+            </svg>
+          </span>
+          <span class="prd-amenities__text">Swimming Pool</span>
+        </div>
+
+        <!-- 6. Gymnasium -->
+        <div class="prd-amenities__item">
+          <span class="prd-amenities__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="8" y="26" width="8" height="12" rx="1"/>
+              <rect x="48" y="26" width="8" height="12" rx="1"/>
+              <path d="M16 32 L48 32"/>
+              <rect x="24" y="22" width="4" height="20" rx="1"/>
+              <rect x="36" y="22" width="4" height="20" rx="1"/>
+            </svg>
+          </span>
+          <span class="prd-amenities__text">Gymnasium</span>
+        </div>
+
+        <!-- 7. Yoga Deck -->
+        <div class="prd-amenities__item">
+          <span class="prd-amenities__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="32" cy="14" r="5"/>
+              <path d="M32 20 L32 36"/>
+              <path d="M22 26 L42 26"/>
+              <path d="M24 48 L32 36 L40 48"/>
+              <path d="M18 48 L46 48"/>
+            </svg>
+          </span>
+          <span class="prd-amenities__text">Yoga Deck</span>
+        </div>
+
+        <!-- 8. Jogging Track -->
+        <div class="prd-amenities__item">
+          <span class="prd-amenities__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="42" cy="12" r="4"/>
+              <path d="M42 16 L34 26 L22 28"/>
+              <path d="M34 26 L38 38 L46 44"/>
+              <path d="M22 28 L14 42"/>
+              <path d="M38 38 L30 48"/>
+              <path d="M46 44 L54 42"/>
+            </svg>
+          </span>
+          <span class="prd-amenities__text">Jogging Track</span>
+        </div>
+
+        <!-- 9. Kids Play Area -->
+        <div class="prd-amenities__item">
+          <span class="prd-amenities__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 52 L16 20 L48 20 L48 52"/>
+              <path d="M16 20 L48 20 L32 6 Z"/>
+              <rect x="26" y="34" width="12" height="18" rx="1"/>
+              <circle cx="32" cy="42" r="1"/>
+            </svg>
+          </span>
+          <span class="prd-amenities__text">Kids Play Area</span>
+        </div>
+
+        <!-- 10. Club House -->
+        <div class="prd-amenities__item">
+          <span class="prd-amenities__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 30 L32 12 L54 30"/>
+              <path d="M14 30 L14 52 L50 52 L50 30"/>
+              <path d="M26 52 L26 38 L38 38 L38 52"/>
+              <circle cx="32" cy="26" r="2"/>
+            </svg>
+          </span>
+          <span class="prd-amenities__text">Club House</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ARROWS -->
+   <!-- ARROWS -->
+<div class="prd-amenities__nav">
+  <button class="prd-amenities__arrow prd-amenities__arrow--prev" id="prdAmenitiesPrev" aria-label="Previous" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+  </button>
+
+  <button class="prd-amenities__arrow prd-amenities__arrow--next" id="prdAmenitiesNext" aria-label="Next" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"/>
+    </svg>
+  </button>
+</div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========================================
+     GALLERY SECTION (Our Work)
+========================================= -->
+<section class="prd-gallery" id="gallery">
+  <div class="prd-gallery__panel">
+
+    <!-- HEADING -->
+    <div class="prd-gallery__head">
+      <h2 class="prd-gallery__title">Our Gallery</h2>
+      <p class="prd-gallery__subtitle">Explore our completed and ongoing projects</p>
+    </div>
+
+    <!-- SLIDER — 3 cards visible -->
+    <div class="prd-gallery__viewport">
+      <div class="prd-gallery__track" id="prdGalleryTrack">
+
+        <!-- Card 1 -->
+        <article class="project-card">
+          <div class="project-card__image-wrap">
+            <img class="project-card__image" src="img/frontvilla.jpeg" alt="Zinio Office" loading="lazy">
+          </div>
+          <span class="project-card__star" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 4 L26 14 L36 14 L28 22 L32 32 L20 26 L8 32 L12 22 L4 14 L14 14 Z"/>
+            </svg>
+          </span>
+          <h3 class="project-card__title">villa 1</h3>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="project-card">
+          <div class="project-card__image-wrap">
+            <img class="project-card__image" src="img/frontvilla2.jpeg" alt="Tourism Malaysia" loading="lazy">
+          </div>
+          <span class="project-card__star" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 4 L26 14 L36 14 L28 22 L32 32 L20 26 L8 32 L12 22 L4 14 L14 14 Z"/>
+            </svg>
+          </span>
+          <h3 class="project-card__title">villaa 2</h3>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="project-card">
+          <div class="project-card__image-wrap">
+            <img class="project-card__image" src="img/frontvilla3.jpeg" alt="Truman" loading="lazy">
+          </div>
+          <span class="project-card__star" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 4 L26 14 L36 14 L28 22 L32 32 L20 26 L8 32 L12 22 L4 14 L14 14 Z"/>
+            </svg>
+          </span>
+          <h3 class="project-card__title">villa 3</h3>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="project-card">
+          <div class="project-card__image-wrap">
+            <img class="project-card__image" src="sidevilla.jpeg" alt="The Grid" loading="lazy">
+          </div>
+          <span class="project-card__star" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 4 L26 14 L36 14 L28 22 L32 32 L20 26 L8 32 L12 22 L4 14 L14 14 Z"/>
+            </svg>
+          </span>
+          <h3 class="project-card__title">Side view</h3>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="project-card">
+          <div class="project-card__image-wrap">
+            <img class="project-card__image" src="img/middlevilla.jpeg" alt="Aurora Tower" loading="lazy">
+          </div>
+          <span class="project-card__star" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 4 L26 14 L36 14 L28 22 L32 32 L20 26 L8 32 L12 22 L4 14 L14 14 Z"/>
+            </svg>
+          </span>
+          <h3 class="project-card__title">Middle view</h3>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="project-card">
+          <div class="project-card__image-wrap">
+            <img class="project-card__image" src="img/uppervilla.jpeg" alt="Cascade Villa" loading="lazy">
+          </div>
+          <span class="project-card__star" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 4 L26 14 L36 14 L28 22 L32 32 L20 26 L8 32 L12 22 L4 14 L14 14 Z"/>
+            </svg>
+          </span>
+          <h3 class="project-card__title">upper view</h3>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- DOTS -->
+    <div class="prd-gallery__dots" id="prdGalleryDots">
+      <span class="prd-gallery__dot is-active" data-index="0"></span>
+      <span class="prd-gallery__dot" data-index="1"></span>
+      <span class="prd-gallery__dot" data-index="2"></span>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========================================
+     LOCATION SECTION
+========================================= -->
+<section class="prd-location" id="location">
+  <div class="prd-location__inner">
+
+   <!-- HEADING -->
+<div class="prd-location__head">
+  <h2 class="prd-location__title">Paradise Valley</h2>
+  <p class="prd-location__subtitle">
+    Khardi–Shahapur, Maharashtra — where scenic hills, lush greenery and convenient connectivity come together to create a peaceful weekend-home destination near Mumbai.
+  </p>
+</div>
+    <!-- BODY -->
+    <div class="prd-location__body">
+
+      <!-- LEFT — MAP -->
+      <div class="prd-location__media">
+        <div class="prd-location__map-wrap">
+
+          <!-- Map image (click → lightbox) -->
+          <button
+            type="button"
+            class="prd-location__map-link"
+            data-map-open
+            aria-label="Open location map"
+          >
+            <img
+              src="img/location.png"
+              alt="location-map"
+              loading="lazy"
+            >
+          </button>
+
+          <!-- ✅ VIEW IN MAP — Below map, full-width -->
+        <a
+            href="https://www.google.com/maps/place/Paradise+Valley+By+Thakarshi/@19.5858875,73.4209029,15z/data=!4m16!1m9!3m8!1s0x3be77f50c7109d45:0xf667c8ee7923f6d3!2sParadise+Valley+By+Thakarshi!8m2!3d19.5857135!4d73.4208866!9m1!1b1!16s%2Fg%2F11z5v5l_zx!3m5!1s0x3be77f50c7109d45:0xf667c8ee7923f6d3!8m2!3d19.5857135!4d73.4208866!16s%2Fg%2F11z5v5l_zx?entry=ttu&g_ep=EgoyMDI2MTAwNi4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="prd-location__map-cta"
+          >
+            VIEW IN MAP
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- RIGHT — ACCORDION -->
+      <div class="prd-location__accordion" id="prdLocationAcc">
+
+        <!-- ITEM 1 -->
+        <div class="prd-location__acc-item">
+          <button class="prd-location__acc-head" type="button" data-acc-toggle>
+            <span class="prd-location__acc-title">Transportation</span>
+            <span class="prd-location__acc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line class="acc-line-h" x1="5" y1="12" x2="19" y2="12"/>
+                <line class="acc-line-v" x1="12" y1="5" x2="12" y2="19"/>
+              </svg>
+            </span>
+          </button>
+          <div class="prd-location__acc-body">
+            <ul class="prd-location__acc-list">
+              <li><strong>Khardi Railway Station</strong> — Approx. 3.5 km</li>
+              <li><strong>Mumbai–Nashik Highway</strong> — Approx. 4 km</li>
+              <li><strong>Samruddhi Mahamarg</strong> — Approx. 2.5 km</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="prd-location__acc-item">
+          <button class="prd-location__acc-head" type="button" data-acc-toggle>
+            <span class="prd-location__acc-title">Connectivity</span>
+            <span class="prd-location__acc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line class="acc-line-h" x1="5" y1="12" x2="19" y2="12"/>
+                <line class="acc-line-v" x1="12" y1="5" x2="12" y2="19"/>
+              </svg>
+            </span>
+          </button>
+          <div class="prd-location__acc-body">
+            <ul class="prd-location__acc-list">
+              <li><strong>Mumbai</strong> — Approx. 2 hrs</li>
+              <li><strong>Thane</strong> — Approx. 1 hr</li>
+              <li><strong>Nashik</strong> — Approx. 1.5 hrs</li>
+              <li><strong>Kalyan</strong> — Approx. 40 mins</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="prd-location__acc-item">
+          <button class="prd-location__acc-head" type="button" data-acc-toggle>
+            <span class="prd-location__acc-title">Schools &amp; Healthcare</span>
+            <span class="prd-location__acc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line class="acc-line-h" x1="5" y1="12" x2="19" y2="12"/>
+                <line class="acc-line-v" x1="12" y1="5" x2="12" y2="19"/>
+              </svg>
+            </span>
+          </button>
+          <div class="prd-location__acc-body">
+            <ul class="prd-location__acc-list">
+              <li>KVES Khardi School &amp; College</li>
+              <li>Government Hospital, Khardi</li>
+              <li>Local clinics and educational facilities</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ITEM 4 -->
+        <div class="prd-location__acc-item">
+          <button class="prd-location__acc-head" type="button" data-acc-toggle>
+            <span class="prd-location__acc-title">Nearby Amenities &amp; Nature</span>
+            <span class="prd-location__acc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line class="acc-line-h" x1="5" y1="12" x2="19" y2="12"/>
+                <line class="acc-line-v" x1="12" y1="5" x2="12" y2="19"/>
+              </svg>
+            </span>
+          </button>
+          <div class="prd-location__acc-body">
+            <ul class="prd-location__acc-list">
+              <li>Khardi Market and daily essentials</li>
+              <li>Bhatsa River region</li>
+              <li>Green surroundings, hills and nearby weekend destinations</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================
+     MAP LIGHTBOX
+========================================= -->
+<div class="prd-map-lightbox" id="prdMapLightbox" aria-hidden="true">
+  <div class="prd-map-lightbox__overlay" data-map-close></div>
+
+  <button class="prd-map-lightbox__close" data-map-close aria-label="Close" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="6" y1="6" x2="18" y2="18"/>
+      <line x1="18" y1="6" x2="6" y2="18"/>
+    </svg>
+  </button>
+
+  <div class="prd-map-lightbox__content">
+    <img id="prdMapLightboxImg" src="" alt="Location Map — Full View">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- =========================================
+     DEVELOPER SECTION
+========================================= -->
+<section class="prd-developer" id="developer">
+  <div class="prd-developer__inner">
+
+    <!-- HEADING -->
+    <div class="prd-developer__head">
+      <p class="prd-developer__eyebrow">About Developer</p>
+      <h2 class="prd-developer__title">Building Excellence Since 35 Years</h2>
+      <span class="prd-developer__divider"></span>
+    </div>
+
+    <!-- LOGO -->
+    <div class="prd-developer__logo">
+      <img
+        src="img/logo.png"
+        alt="Thakarshi Lifespaces Logo"
+        loading="lazy"
+      >
+    </div>
+
+    <!-- DESCRIPTION -->
+    <p class="prd-developer__desc">
+      With over 35 years of experience in the construction industry, Thakarshi
+      Lifespaces has been a prominent name since its establishment. We have made
+      significant strides in various sectors, including residential, industrial,
+      commercial, and hospitality. Our reputation for excellence is reflected in
+      our successful projects across Dombivli, Ambernath, Murbad, Navi Mumbai,
+      and Pune.
+    </p>
+
+    <!-- STATS -->
+    <div class="prd-developer__stats">
+
+      <div class="prd-developer__stat">
+        <p class="prd-developer__stat-value">35<span>+</span></p>
+        <p class="prd-developer__stat-label">Years of Legacy</p>
+      </div>
+
+      <div class="prd-developer__stat">
+        <p class="prd-developer__stat-value">50<span>+</span></p>
+        <p class="prd-developer__stat-label">Projects Delivered</p>
+      </div>
+
+      <div class="prd-developer__stat">
+        <p class="prd-developer__stat-value">5000<span>+</span></p>
+        <p class="prd-developer__stat-label">Happy Families</p>
+      </div>
+
+    </div>
+
+    <!-- WEBSITE LINK -->
+    <a
+      href="https://www.thakarshilifespaces.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="prd-developer__link"
+    >
+      <span>www.thakarshilifespaces.com</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"/>
+        <polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </a>
+
+  </div>
+</section>
+
+
+
+
+
+
+<!-- =========================================
+     ENQUIRY MODAL
+========================================= -->
+<div class="prd-modal" id="prdModal" aria-hidden="true">
+
+  <!-- Overlay -->
+  <div class="prd-modal__overlay" data-modal-close></div>
+
+  <!-- Modal Box -->
+  <div class="prd-modal__box" role="dialog" aria-modal="true" aria-labelledby="prdModalTitle">
+
+    <!-- Header -->
+    <div class="prd-modal__header">
+      <h3 class="prd-modal__title" id="prdModalTitle">Register Your Interest</h3>
+      <button
+        class="prd-modal__close"
+        data-modal-close
+        aria-label="Close"
+        type="button"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="6" y1="6" x2="18" y2="18"/>
+          <line x1="18" y1="6" x2="6" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Body — Form -->
+    <form class="prd-modal__body" id="prdModalForm" novalidate>
+
+      <!-- Name -->
+      <div class="prd-modal__field">
+        <label for="prdName" class="prd-modal__label">Full Name*</label>
+        <input
+          type="text"
+          id="prdName"
+          name="name"
+          class="prd-modal__input"
+          placeholder="Enter your full name"
+          required
+        >
+        <p class="prd-modal__error" data-error="name"></p>
+      </div>
+
+      <!-- Mobile -->
+      <div class="prd-modal__field">
+        <label for="prdMobile" class="prd-modal__label">Mobile Number*</label>
+        <input
+          type="tel"
+          id="prdMobile"
+          name="mobile"
+          class="prd-modal__input"
+          placeholder="+91 98765 43210"
+          pattern="[0-9+\s-]{7,15}"
+          required
+        >
+        <p class="prd-modal__error" data-error="mobile"></p>
+      </div>
+
+      <!-- Email -->
+      <div class="prd-modal__field">
+        <label for="prdEmail" class="prd-modal__label">Email Address</label>
+        <input
+          type="email"
+          id="prdEmail"
+          name="email"
+          class="prd-modal__input"
+          placeholder="you@example.com"
+        >
+        <p class="prd-modal__error" data-error="email"></p>
+      </div>
+
+      <!-- Configuration (Optional) -->
+      <div class="prd-modal__field">
+        <label for="prdConfig" class="prd-modal__label">Interested In</label>
+        <select id="prdConfig" name="config" class="prd-modal__input">
+          <option value="">Select configuration</option>
+          <option value="2 BHK">2 BHK</option>
+          <option value="3 BHK">3 BHK</option>
+          <option value="Penthouse">Penthouse</option>
+          <option value="Villa">Villa</option>
+        </select>
+      </div>
+
+      <!-- Consent -->
+      <label class="prd-modal__consent">
+        <input type="checkbox" id="prdConsent" required>
+        <span>
+          I consent to the processing of my personal data according to the
+          <a href="#" target="_blank">Privacy Policy</a> and agree to be contacted.
+        </span>
+      </label>
+      <p class="prd-modal__error" data-error="consent"></p>
+
+      <!-- Submit -->
+      <button type="submit" class="prd-modal__submit">
+        Submit Enquiry
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+
+  <script src="paradise.js"></script>
+</body>
+</html>

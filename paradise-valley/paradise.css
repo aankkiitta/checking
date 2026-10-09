@@ -1,0 +1,3924 @@
+/* ============================================================================
+   ██  PARADISE — MAIN STYLESHEET
+   ----------------------------------------------------------------------------
+   Structure:
+   1. Reset
+   2. Header + Header Responsive
+   3. Side Drawer + Drawer Responsive
+   4. Hero + Hero Responsive
+   5. QR Card + QR Card Responsive
+   6. Offer Strip + Offer Responsive
+   7. About Section + About Responsive
+   ============================================================================ */
+
+
+/* ============================================================================
+   1. ██  RESET
+   ============================================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", -apple-system, sans-serif;
+  background: #ffffff;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+
+/* ============================================================================
+   2. ██  HEADER
+   ============================================================================ */
+.prd-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid transparent;
+
+  padding: 24px 60px;
+  transition: padding 0.35s ease, background 0.35s ease,
+              border-color 0.35s ease, backdrop-filter 0.35s ease;
+}
+
+.prd-header.is-scrolled {
+  padding: 16px 60px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.prd-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ---------- LOGO ---------- */
+.prd-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.prd-logo__img {
+  height: 60px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: height 0.35s ease;
+}
+
+.prd-header.is-scrolled .prd-logo__img {
+  height: 50px;
+}
+
+/* ---------- NAV ---------- */
+.prd-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.prd-nav__link {
+  position: relative;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 6px 0;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  transition: color 0.25s ease;
+}
+
+.prd-nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1.5px;
+  background: #e76f51;
+  transition: width 0.3s ease;
+}
+
+.prd-nav__link:hover { color: #e76f51; }
+.prd-nav__link:hover::after { width: 100%; }
+
+/* ---------- RIGHT ACTIONS ---------- */
+.prd-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.prd-header__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 26px;
+  border: 1.5px solid #ffffff;
+  border-radius: 100px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: all 0.3s ease;
+}
+
+.prd-header__cta:hover {
+  background: #ffffff;
+  color: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* ---------- HAMBURGER ---------- */
+.prd-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.prd-burger:hover { opacity: 0.75; }
+
+.prd-burger__line {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+}
+
+.prd-burger:hover .prd-burger__line:nth-child(1) { transform: translateY(-2px); }
+.prd-burger:hover .prd-burger__line:nth-child(3) { transform: translateY(2px); }
+
+
+/* ============================================================================
+   2.X  HEADER RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 1024px) {
+  .prd-header { padding: 20px 32px; }
+  .prd-header.is-scrolled { padding: 14px 32px; }
+  .prd-logo__img { height: 52px; }
+  .prd-nav { gap: 22px; }
+  .prd-nav__link { font-size: 14px; }
+}
+
+@media (max-width: 900px) {
+  .prd-header { padding: 16px 20px; }
+  .prd-header.is-scrolled { padding: 12px 20px; }
+  .prd-logo__img { height: 46px; }
+  .prd-nav { display: none; }
+  .prd-header__cta { display: none; }
+  .prd-burger { display: flex; }
+}
+
+@media (max-width: 480px) {
+  .prd-logo__img { height: 42px; }
+  .prd-burger { width: 36px; height: 36px; }
+  .prd-burger__line { width: 22px; }
+}
+
+
+/* ============================================================================
+   3. ██  SIDE DRAWER (Mobile Menu)
+   ============================================================================ */
+.prd-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  pointer-events: none;
+}
+
+.prd-drawer__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.prd-drawer__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  height: 100dvh;
+  width: 360px;
+  max-width: 85vw;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  box-shadow: -10px 0 40px rgba(15, 23, 42, 0.18);
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prd-drawer.is-open { pointer-events: auto; }
+.prd-drawer.is-open .prd-drawer__overlay { opacity: 1; visibility: visible; }
+.prd-drawer.is-open .prd-drawer__panel { transform: translateX(0); }
+
+.prd-drawer__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 26px;
+  border-bottom: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.prd-logo--drawer .prd-logo__img {
+  height: 44px;
+  filter: none;
+}
+
+.prd-drawer__close {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 17px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease, color 0.25s ease;
+}
+
+.prd-drawer__close:hover {
+  background: #0f4c5c;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+.prd-drawer__nav {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.prd-drawer__link {
+  position: relative;
+  display: block;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1e293b;
+  text-decoration: none;
+  padding: 16px 26px;
+  border-bottom: 1px solid #f1f5f9;
+  transition: color 0.25s ease, padding 0.3s ease,
+              background 0.25s ease, letter-spacing 0.25s ease;
+}
+
+.prd-drawer__link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background: #0f4c5c;
+  transition: height 0.3s ease;
+}
+
+.prd-drawer__link:hover {
+  background: #e8f1f4;
+  color: #0f4c5c;
+  padding-left: 34px;
+  letter-spacing: 0.3px;
+}
+
+.prd-drawer__link:hover::before { height: 60%; }
+
+.prd-drawer__footer {
+  padding: 20px 26px 26px;
+  border-top: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.prd-drawer__cta {
+  display: block;
+  padding: 14px 24px;
+  text-align: center;
+  background: #0f172a;
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+.prd-drawer__cta:hover {
+  background: #0f4c5c;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(15, 76, 92, 0.3);
+}
+
+body.prd-drawer-open { overflow: hidden; }
+
+
+/* ============================================================================
+   3.X  DRAWER RESPONSIVE
+   ============================================================================ */
+@media (max-width: 640px) {
+  .prd-drawer__panel { width: 320px; max-width: 86vw; }
+  .prd-drawer__head { padding: 18px 22px; }
+  .prd-logo--drawer .prd-logo__img { height: 40px; }
+  .prd-drawer__close { width: 38px; height: 38px; }
+  .prd-drawer__link { font-size: 14.5px; padding: 15px 22px; }
+  .prd-drawer__link:hover { padding-left: 30px; }
+  .prd-drawer__footer { padding: 18px 22px 22px; }
+}
+
+@media (max-width: 480px) {
+  .prd-drawer__panel { width: 300px; max-width: 82vw; }
+  .prd-drawer__head { padding: 16px 20px; }
+  .prd-logo--drawer .prd-logo__img { height: 38px; }
+  .prd-drawer__close { width: 36px; height: 36px; font-size: 15px; }
+  .prd-drawer__link { font-size: 14px; padding: 14px 20px; }
+  .prd-drawer__link:hover { padding-left: 28px; }
+  .prd-drawer__footer { padding: 16px 20px 20px; }
+  .prd-drawer__cta { font-size: 12px; padding: 13px 20px; }
+}
+
+@media (max-width: 380px) {
+  .prd-drawer__panel { width: 280px; max-width: 88vw; }
+  .prd-drawer__link { font-size: 13.5px; padding: 13px 18px; }
+}
+
+
+/* ============================================================================
+   4. ██  HERO
+   ============================================================================ */
+.prd-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 640px;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.prd-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("img/hero.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+
+  animation: prd-hero-zoom 20s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes prd-hero-zoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.15); }
+}
+
+.prd-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.35) 0%,
+    rgba(15, 23, 42, 0.35) 100%
+  );
+}
+
+.prd-hero__content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+  color: #ffffff;
+}
+
+.prd-hero__eyebrow {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #facc15;
+  margin: 0 0 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.prd-hero__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 84px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 20px;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+}
+
+.prd-hero__sub {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 14px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.prd-hero__location {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================================================
+   4.X  HERO RESPONSIVE
+   ============================================================================ */
+
+/* ---------- Tablet (≤1024px) ---------- */
+@media (max-width: 1024px) {
+  .prd-hero { min-height: 610px; }
+  .prd-hero__eyebrow { font-size: 14px; letter-spacing: 5px; margin-bottom: 17px; }
+  .prd-hero__title { font-size: 66px; letter-spacing: 3px; }
+  .prd-hero__sub { font-size: 21px; }
+  .prd-hero__location { font-size: 13.5px; }
+}
+
+/* ---------- Mobile (≤640px) ---------- */
+@media (max-width: 640px) {
+  .prd-hero {
+    height: 74vh;
+    min-height: 490px;
+  }
+
+  .prd-hero__content { padding: 0 20px; }
+
+  .prd-hero__eyebrow {
+    font-size: 12px;
+    letter-spacing: 4.5px;
+    margin-bottom: 15px;
+  }
+  .prd-hero__title {
+    font-size: 44px;
+    letter-spacing: 2.2px;
+    margin-bottom: 15px;
+  }
+  .prd-hero__sub {
+    font-size: 17px;
+    margin-bottom: 11px;
+  }
+  .prd-hero__location {
+    font-size: 11.5px;
+    letter-spacing: 1.3px;
+  }
+}
+
+/* ---------- Small mobile (≤400px) ---------- */
+@media (max-width: 400px) {
+  .prd-hero {
+    height: 72vh;
+    min-height: 460px;
+  }
+
+  .prd-hero__eyebrow { font-size: 11px; letter-spacing: 4px; }
+  .prd-hero__title { font-size: 37px; letter-spacing: 1.8px; }
+  .prd-hero__sub { font-size: 15.5px; }
+  .prd-hero__location { font-size: 10.5px; }
+}
+/* ============================================================================
+   5. ██  QR CORNER CARD
+   ============================================================================ */
+.prd-qr-card {
+  position: absolute;
+  bottom: 70px;
+  right: 30px;
+  z-index: 5;
+
+  width: 110px;
+  padding: 8px 8px 7px;
+
+  background: rgba(196, 178, 138, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 5px;
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.prd-qr-card__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 5px;
+  line-height: 1;
+}
+
+.prd-qr-card__qr {
+  width: 100%;
+  height: 68px;
+  background: #ffffff;
+  border-radius: 3px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.prd-qr-card__qr img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.prd-qr-card__reg {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 6.5px;
+  font-weight: 500;
+  letter-spacing: 0.15px;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 5px;
+  line-height: 1;
+}
+
+.prd-qr-card__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 6.5px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  line-height: 1;
+
+  transition: color 0.3s ease;
+}
+
+.prd-qr-card__cta:hover { color: #facc15; }
+
+.prd-qr-card__cta svg {
+  width: 9px;
+  height: 9px;
+  animation: prd-qr-bounce 2s ease-in-out infinite;
+}
+
+@keyframes prd-qr-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(2px); }
+}
+
+
+/* ============================================================================
+   5.X  QR CARD RESPONSIVE
+   ============================================================================ */
+@media (max-width: 1024px) {
+  .prd-qr-card {
+    bottom: 62px;
+    right: 20px;
+    width: 100px;
+    padding: 7px 7px 6px;
+  }
+  .prd-qr-card__qr { height: 62px; }
+  .prd-qr-card__title { font-size: 7.5px; }
+  .prd-qr-card__reg   { font-size: 6px; }
+  .prd-qr-card__cta   { font-size: 6px; }
+}
+
+@media (max-width: 640px) {
+  .prd-qr-card {
+    bottom: 55px;
+    right: 14px;
+    width: 86px;
+    padding: 5px 5px 4px;
+  }
+  .prd-qr-card__qr { height: 52px; }
+  .prd-qr-card__title { font-size: 6.5px; }
+  .prd-qr-card__reg   { font-size: 5px; }
+  .prd-qr-card__cta   { font-size: 5px; letter-spacing: 0.3px; }
+  .prd-qr-card__cta svg { width: 7px; height: 7px; }
+}
+
+@media (max-width: 400px) {
+  .prd-qr-card {
+    bottom: 50px;
+    right: 10px;
+    width: 78px;
+    padding: 4px 4px 3px;
+  }
+  .prd-qr-card__qr { height: 46px; }
+}
+
+
+/* ============================================================================
+   6. ██  OFFER STRIP
+   ============================================================================ */
+.prd-offer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
+  background: #0f4c5c;
+  overflow: visible;
+  border: none;
+  box-shadow: none;
+  font-size: 0;
+  line-height: 0;
+}
+
+.prd-offer__scallop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 32px;
+  transform: translateY(-100%);
+  line-height: 0;
+  font-size: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.prd-offer__scallop svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.prd-offer__strip {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  line-height: 0;
+  font-size: 0;
+}
+
+.prd-offer__track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  height: 40px;
+  line-height: 0;
+  font-size: 0;
+
+  animation: prd-offer-marquee 40s linear infinite;
+  will-change: transform;
+}
+
+@keyframes prd-offer-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.prd-offer:hover .prd-offer__track {
+  animation-play-state: paused;
+}
+
+.prd-offer__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 32px;
+  line-height: 1;
+  font-size: 13px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ============================================================================
+   6.X  OFFER STRIP RESPONSIVE
+   ============================================================================ */
+@media (max-width: 1024px) {
+  .prd-offer__scallop { height: 28px; }
+  .prd-offer__track { height: 38px; }
+  .prd-offer__item { font-size: 12px; padding: 0 24px; }
+}
+
+@media (max-width: 768px) {
+  .prd-offer__scallop { height: 24px; }
+  .prd-offer__track { height: 36px; }
+  .prd-offer__item {
+    font-size: 11px;
+    padding: 0 20px;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .prd-offer__scallop { height: 20px; }
+  .prd-offer__track { height: 34px; }
+  .prd-offer__item {
+    font-size: 10px;
+    padding: 0 16px;
+    letter-spacing: 0.8px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   7. ██  ABOUT SECTION
+   ============================================================================ */
+.prd-about {
+  width: 100%;
+  padding: 80px 60px;                    /* ✅ 120px → 80px (desktop kam) */
+  background: #f7f5f0;
+  overflow: hidden;
+}
+
+.prd-about__inner {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 70px;                             /* ✅ 90px → 70px (kam) */
+  max-width: 1350px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+
+/* ============================================================================
+   7.1  LEFT — IMAGE CARD + OFFSET IMAGE LAYER
+   ============================================================================ */
+.prd-about__media {
+  position: relative;
+  width: 100%;
+  padding: 0 0 70px 60px;                /* ✅ 90px → 70px (kam bottom) */
+}
+
+/* ✅ Offset layer — image ke saath, dark tinted */
+.prd-about__media::before {
+  content: "";
+  position: absolute;
+  top: 80px;
+  left: -50px;
+  width: 95%;
+  height: calc(100% - 80px);
+  z-index: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.75) 0%,
+      rgba(15, 23, 42, 0.88) 100%
+    ),
+    url("img/hero.webp")
+    center / cover no-repeat;
+}
+
+
+/* ============================================================================
+   7.1.1  LAYER TEXT — Mobile-only
+   ============================================================================ */
+.prd-about__layer-text {
+  display: none;                         /* ❌ Hidden on desktop */
+}
+
+
+/* ---------- Main image card ---------- */
+.prd-about__card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow:
+    0 30px 70px rgba(15, 23, 42, 0.18),
+    0 6px 18px rgba(15, 23, 42, 0.08);
+  background: #0f172a;
+}
+
+/* ---------- Slides ---------- */
+.prd-about__slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.prd-about__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.prd-about__slide.is-active {
+  opacity: 1;
+}
+
+.prd-about__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Counter ---------- */
+.prd-about__counter {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  z-index: 3;
+
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.prd-about__counter-current {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.prd-about__counter-sep {
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.7;
+  margin: 0 2px;
+}
+
+.prd-about__counter-total {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+/* ---------- Arrows ---------- */
+.prd-about__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: #ffffff;
+  cursor: pointer;
+
+  opacity: 0;
+  transition: opacity 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.prd-about__card:hover .prd-about__arrow {
+  opacity: 1;
+}
+
+.prd-about__arrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.prd-about__arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.prd-about__arrow--prev { left: 16px; }
+.prd-about__arrow--next { right: 16px; }
+
+
+/* ============================================================================
+   7.2  RIGHT — TEXT CONTENT
+   ============================================================================ */
+.prd-about__content { width: 100%; }
+
+.prd-about__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+  color: #0f172a;
+  margin: 0 0 20px;                      /* ✅ 24px → 20px */
+}
+
+.prd-about__desc {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15.5px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #4a5568;
+  margin: 0 0 36px;                      /* ✅ 44px → 36px */
+}
+
+.prd-about__features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;                             /* ✅ 28px → 24px */
+}
+
+.prd-about__feature {
+  display: flex;
+  align-items: center;
+  gap: 20px;                             /* ✅ 22px → 20px */
+}
+
+.prd-about__feature-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  color: #0f172a;
+}
+
+.prd-about__feature-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.prd-about__feature-text {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+.prd-about__feature-text strong {
+  font-weight: 700;
+  color: #0f172a;
+  margin-right: 4px;
+}
+
+
+/* ============================================================================
+   7.X  ABOUT RESPONSIVE
+   ============================================================================ */
+
+/* ---------- Tablet (≤1024px) ---------- */
+@media (max-width: 1024px) {
+  .prd-about { padding: 65px 40px; }     /* ✅ 90px → 65px */
+  .prd-about__inner { gap: 45px; }       /* ✅ 55px → 45px */
+  .prd-about__title { font-size: 34px; }
+  .prd-about__desc { font-size: 15px; }
+  .prd-about__feature-text { font-size: 15px; }
+  .prd-about__feature-icon { width: 46px; height: 46px; }
+
+  .prd-about__media {
+    padding: 0 0 55px 50px;              /* ✅ 70px → 55px */
+  }
+  .prd-about__media::before {
+    top: 65px;
+    left: -40px;
+    width: 95%;
+    height: calc(100% - 65px);
+  }
+}
+
+/* ---------- Small tablet (≤900px) — stack vertical ---------- */
+@media (max-width: 900px) {
+  .prd-about__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;                           /* ✅ 50px → 40px */
+  }
+  .prd-about__media {
+    order: 1;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .prd-about__content { order: 2; }
+}
+
+/* ---------- Mobile (≤640px) ---------- */
+@media (max-width: 640px) {
+  .prd-about {
+    padding: 24px 20px 40px;             /* ✅ 30/60 → 24/40 */
+    overflow: hidden;
+  }
+
+  /* Media — text ki jagah upar */
+  .prd-about__media {
+    padding: 0 0 40px 35px;              /* ✅ 50px → 40px */
+    padding-top: 75px;                   /* ✅ 95px → 75px */
+  }
+
+  .prd-about__media::before {
+    top: 115px;                          /* ✅ 140px → 115px */
+    left: -20px;
+    width: 96%;
+    height: calc(100% - 115px);
+  }
+
+  /* ---------- Layer Text — Centered ---------- */
+  .prd-about__layer-text {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    text-align: center;
+    padding: 0 8px;
+  }
+
+  /* ✅ Heading */
+  .prd-about__layer-title {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.3px;
+    color: #0f172a;
+    margin: 0 0 4px;
+    white-space: nowrap;
+  }
+
+  .prd-about__layer-title span {
+    font-weight: 800;
+    color: #0f4c5c;
+  }
+
+  /* ---------- Subtext ---------- */
+  .prd-about__layer-sub {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 11.5px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    color: #94a3b8;
+    margin: 0;
+  }
+
+  .prd-about__layer-sub strong {
+    font-weight: 600;
+    color: #64748b;
+    letter-spacing: 0.6px;
+  }
+
+  /* ---------- Card ---------- */
+  .prd-about__card {
+    aspect-ratio: 4 / 3;
+    border-radius: 3px;
+  }
+
+  .prd-about__counter { top: 14px; right: 16px; }
+  .prd-about__counter-current { font-size: 24px; }
+  .prd-about__counter-total { font-size: 13px; }
+  .prd-about__counter-sep { font-size: 13px; }
+
+  .prd-about__arrow {
+    width: 34px;
+    height: 34px;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.35);
+  }
+  .prd-about__arrow svg { width: 15px; height: 15px; }
+  .prd-about__arrow--prev { left: 10px; }
+  .prd-about__arrow--next { right: 10px; }
+
+  .prd-about__title {
+    font-size: 28px;
+    letter-spacing: 0.3px;
+    margin-bottom: 16px;                 /* ✅ 18px → 16px */
+  }
+
+  .prd-about__desc {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 26px;                 /* ✅ 32px → 26px */
+  }
+
+  .prd-about__features { gap: 18px; }    /* ✅ 20px → 18px */
+  .prd-about__feature { gap: 14px; }     /* ✅ 16px → 14px */
+  .prd-about__feature-icon { width: 40px; height: 40px; }
+  .prd-about__feature-text { font-size: 14px; }
+}
+
+/* ---------- Small mobile (≤400px) ---------- */
+@media (max-width: 400px) {
+  .prd-about {
+    padding: 20px 16px 36px;             /* ✅ 24/50 → 20/36 */
+  }
+
+  .prd-about__title { font-size: 24px; }
+  .prd-about__desc { font-size: 13px; }
+  .prd-about__feature-text { font-size: 13px; }
+
+  .prd-about__media {
+    padding: 0 0 34px 28px;              /* ✅ 42px → 34px */
+    padding-top: 70px;                   /* ✅ 88px → 70px */
+  }
+
+  .prd-about__media::before {
+    top: 108px;                          /* ✅ 130px → 108px */
+    left: -18px;
+    width: 96%;
+    height: calc(100% - 108px);
+  }
+
+  /* Layer text */
+  .prd-about__layer-title {
+    font-size: 20px;
+    letter-spacing: -0.2px;
+  }
+
+  .prd-about__layer-sub {
+    font-size: 10.5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   8. ██  CONFIGURATION SECTION (Villas)
+   ============================================================================ */
+.prd-config {
+  width: 100%;
+  padding: 50px 60px;
+  background: #ffffff;
+}
+
+.prd-config__inner {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+/* ---------- HEADING ---------- */
+.prd-config__head {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.prd-config__eyebrow {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #0f4c5c;
+  margin: 0 0 6px;
+}
+
+.prd-config__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+
+.prd-config__divider {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #0f4c5c;
+  margin: 0 auto;
+}
+
+/* ---------- GRID — 2 columns ---------- */
+.prd-config__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+/* ---------- CARD ---------- */
+.prd-config__card {
+  position: relative;
+ aspect-ratio: 16 / 7.5;               /* Chota, wide */
+  perspective: 1400px;
+  cursor: pointer;
+}
+
+.prd-config__card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Desktop — hover flip */
+.prd-config__card:hover .prd-config__card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Mobile — tap flip */
+.prd-config__card.is-flipped .prd-config__card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Common front + back */
+.prd-config__front,
+.prd-config__back {
+  position: absolute;
+  inset: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+
+/* ============================================================================
+   8.1  FRONT SIDE (Default — White)
+   ============================================================================ */
+.prd-config__front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;                /* ✅ Content centered */
+  padding: 20px 22px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.05),
+    0 1px 3px rgba(15, 23, 42, 0.04);
+
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      transparent 0px,
+      transparent 6px,
+      rgba(15, 76, 92, 0.06) 6px,
+      rgba(15, 76, 92, 0.06) 7px
+    );
+  background-size: 40% 40%;
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+
+.prd-config__card-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 1.15;
+  color: #0f4c5c;
+  margin: 0 0 6px;
+}
+
+.prd-config__card-area {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  margin: 0 0 14px;
+  letter-spacing: 0.2px;
+}
+
+.prd-config__card-area sup {
+  font-size: 9px;
+  color: #0f4c5c;
+  margin-left: 2px;
+}
+
+.prd-config__card-tag {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 1.3;
+  color: #0f172a;
+  margin: 0 0 6px;
+}
+
+.prd-config__card-desc {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Footer — bottom pe pinned */
+.prd-config__footer {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prd-config__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  color: #0f4c5c;
+  opacity: 0.85;
+}
+
+.prd-config__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.prd-config__enquire-link {
+  position: relative;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0f4c5c;
+  padding-bottom: 3px;
+  transition: color 0.3s ease;
+}
+
+.prd-config__enquire-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  background: #0f4c5c;
+  transition: background 0.3s ease;
+}
+
+.prd-config__enquire-link:hover {
+  color: #0f172a;
+}
+
+.prd-config__enquire-link:hover::after {
+  background: #0f172a;
+}
+
+
+/* ============================================================================
+   8.1.1  COLORED VARIANT — Teal card
+   ============================================================================ */
+.prd-config__card--colored .prd-config__front {
+  background: #0f4c5c;
+  border-color: #0f4c5c;
+  color: #ffffff;
+
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      transparent 0px,
+      transparent 6px,
+      rgba(255, 255, 255, 0.05) 6px,
+      rgba(255, 255, 255, 0.05) 7px
+    );
+  background-size: 40% 40%;
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+
+.prd-config__card--colored .prd-config__card-title {
+  color: #ffffff;
+}
+
+.prd-config__card--colored .prd-config__card-area {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.prd-config__card--colored .prd-config__card-area sup {
+  color: #facc15;
+}
+
+.prd-config__card--colored .prd-config__card-tag {
+  color: #ffffff;
+}
+
+.prd-config__card--colored .prd-config__card-desc {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.prd-config__card--colored .prd-config__icon {
+  color: #ffffff;
+  opacity: 0.85;
+}
+
+.prd-config__card--colored .prd-config__enquire-link {
+  color: #ffffff;
+}
+
+.prd-config__card--colored .prd-config__enquire-link::after {
+  background: #ffffff;
+}
+
+.prd-config__card--colored .prd-config__enquire-link:hover {
+  color: #facc15;
+}
+
+.prd-config__card--colored .prd-config__enquire-link:hover::after {
+  background: #facc15;
+}
+
+
+/* ============================================================================
+   8.2  BACK SIDE
+   ============================================================================ */
+.prd-config__back {
+  transform: rotateY(180deg);
+  background: #0f172a;
+}
+
+.prd-config__back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.05);
+}
+
+.prd-config__back-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.15) 0%,
+    rgba(15, 23, 42, 0.5) 50%,
+    rgba(15, 23, 42, 0.9) 100%
+  );
+  pointer-events: none;
+}
+
+.prd-config__back-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 14px 18px;
+  z-index: 2;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.prd-config__back-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0;
+}
+
+.prd-config__back-area {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 10px;
+  letter-spacing: 0.3px;
+}
+
+.prd-config__back-enquire {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+
+  padding: 8px 14px;
+  background: #0f4c5c;
+  color: #ffffff;
+  border-radius: 100px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prd-config__back-enquire svg {
+  width: 11px;
+  height: 11px;
+  transition: transform 0.3s ease;
+}
+
+.prd-config__back-enquire:hover {
+  background: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 76, 92, 0.4);
+}
+
+.prd-config__back-enquire:hover svg {
+  transform: translateX(3px);
+}
+
+
+/* ============================================================================
+   8.3  HINT TEXT
+   ============================================================================ */
+.prd-config__mobile-hint {
+  display: none;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 10.5px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.3px;
+  color: #94a3b8;
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+.prd-config__global-hint {
+  display: block;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.3px;
+  color: #94a3b8;
+  text-align: right;
+  margin: 14px 0 0;
+}
+
+/* ============================================================================
+   8.X  CONFIGURATION RESPONSIVE
+   ============================================================================ */
+
+/* ---------- Tablet (≤1024px) ---------- */
+@media (max-width: 1024px) {
+  .prd-config { padding: 45px 32px; }
+  .prd-config__inner { max-width: 100%; }
+  .prd-config__grid { gap: 12px; }
+  .prd-config__title { font-size: 20px; }
+  .prd-config__head { margin-bottom: 24px; }
+
+  .prd-config__card {
+    aspect-ratio: 16 / 7;                 /* ✅ 16/6 → 16/7 (taller) */
+  }
+
+  .prd-config__front { padding: 16px 18px; }
+  .prd-config__card-title { font-size: 17px; }
+  .prd-config__card-area { font-size: 12px; margin-bottom: 10px; }
+  .prd-config__card-tag { font-size: 12.5px; }
+  .prd-config__card-desc { font-size: 11px; margin-bottom: 6px; }
+  .prd-config__enquire-link { font-size: 9px; letter-spacing: 1.3px; }
+  .prd-config__icon { width: 20px; height: 20px; }
+
+  .prd-config__footer {
+    left: 18px;
+    right: 18px;
+    bottom: 12px;
+  }
+
+  .prd-config__back-content { padding: 12px 14px; }
+  .prd-config__back-title { font-size: 14px; }
+  .prd-config__back-area { font-size: 10px; margin-bottom: 8px; }
+  .prd-config__back-enquire { padding: 7px 12px; font-size: 8.5px; letter-spacing: 1px; }
+  .prd-config__back-enquire svg { width: 10px; height: 10px; }
+}
+
+/* ---------- Small tablet (≤900px) ---------- */
+@media (max-width: 900px) {
+  .prd-config__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .prd-config__card {
+    aspect-ratio: 16 / 7.5;               /* ✅ 16/6.5 → 16/7.5 (taller) */
+  }
+
+  .prd-config__card-title { font-size: 16px; }
+  .prd-config__card-tag { font-size: 12px; }
+  .prd-config__card-desc { font-size: 10.5px; }
+  .prd-config__enquire-link { font-size: 8.5px; }
+}
+
+/* ---------- Mobile (≤640px) — 1 column ---------- */
+@media (max-width: 640px) {
+  .prd-config { padding: 40px 20px; }
+
+  .prd-config__head { margin-bottom: 20px; }
+  .prd-config__title { font-size: 18px; letter-spacing: 0.8px; }
+  .prd-config__eyebrow { font-size: 9px; letter-spacing: 3px; }
+
+  /* Hint switch */
+  .prd-config__mobile-hint { display: block; margin: 0 0 14px; }
+  .prd-config__global-hint { display: none; }
+
+  .prd-config__grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* Card flip */
+  .prd-config__card {
+    aspect-ratio: 16 / 8.5;               /* ✅ 16/7.5 → 16/8.5 (taller) */
+    perspective: 1400px;
+    cursor: pointer;
+  }
+
+  .prd-config__card-inner {
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .prd-config__card.is-flipped .prd-config__card-inner {
+    transform: rotateY(180deg);
+  }
+
+  /* FRONT */
+  .prd-config__front {
+    display: flex;
+    position: absolute;
+    inset: 0;
+    justify-content: center;
+    padding: 16px 18px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow:
+      0 6px 16px rgba(15, 23, 42, 0.08),
+      0 2px 5px rgba(15, 23, 42, 0.04);
+    background-image:
+      repeating-linear-gradient(
+        135deg,
+        transparent 0px,
+        transparent 6px,
+        rgba(15, 76, 92, 0.06) 6px,
+        rgba(15, 76, 92, 0.06) 7px
+      );
+    background-size: 40% 40%;
+    background-position: top right;
+    background-repeat: no-repeat;
+  }
+
+  /* Colored mobile override */
+  .prd-config__card--colored .prd-config__front {
+    background-color: #0f4c5c;
+  }
+
+  .prd-config__card-title { font-size: 17px; }
+  .prd-config__card-area { font-size: 11.5px; margin-bottom: 8px; }
+  .prd-config__card-tag { font-size: 12.5px; }
+  .prd-config__card-desc { font-size: 11.5px; line-height: 1.5; }
+  .prd-config__enquire-link { font-size: 9px; letter-spacing: 1.4px; }
+  .prd-config__icon { width: 20px; height: 20px; }
+
+  .prd-config__footer {
+    left: 18px;
+    right: 18px;
+    bottom: 12px;
+  }
+
+  /* BACK */
+  .prd-config__back {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(180deg);
+    border-radius: 5px;
+  }
+
+  .prd-config__back-content { padding: 14px 18px; }
+  .prd-config__back-title { font-size: 15px; }
+  .prd-config__back-area { font-size: 10.5px; margin-bottom: 8px; }
+  .prd-config__back-enquire { padding: 7px 13px; font-size: 8.5px; }
+  .prd-config__back-enquire svg { width: 10px; height: 10px; }
+}
+
+/* ---------- Small mobile (≤400px) ---------- */
+@media (max-width: 400px) {
+  .prd-config { padding: 35px 16px; }
+  .prd-config__title { font-size: 17px; }
+  .prd-config__card { aspect-ratio: 16 / 9; }   /* ✅ 16/8 → 16/9 (taller) */
+  .prd-config__card-title { font-size: 15px; }
+  .prd-config__card-tag { font-size: 11.5px; }
+  .prd-config__card-desc { font-size: 10.5px; }
+  .prd-config__back-title { font-size: 13.5px; }
+  .prd-config__back-enquire { padding: 6px 10px; font-size: 8px; }
+  .prd-config__mobile-hint { font-size: 10px; margin-bottom: 12px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   9. ██  FLOOR PLANS SECTION
+   ============================================================================ */
+.prd-plans {
+  width: 100%;
+  padding: 70px 60px;
+  background: #ffffff;
+}
+
+.prd-plans__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---------- HEADING ---------- */
+.prd-plans__head {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.prd-plans__eyebrow {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #0f4c5c;
+  margin: 0 0 8px;
+}
+
+.prd-plans__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: #0f172a;
+  margin: 0 0 14px;
+}
+
+.prd-plans__title span {
+  color: #0f4c5c;
+}
+
+.prd-plans__divider {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #0f4c5c;
+  margin: 0 auto;
+}
+
+/* ---------- ROW ---------- */
+.prd-plans__row {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.prd-plans__row:last-child {
+  margin-bottom: 0;
+}
+
+/* Reverse — Image left, content right (desktop only) */
+.prd-plans__row--reverse .prd-plans__media { order: 1; }
+.prd-plans__row--reverse .prd-plans__content { order: 2; }
+
+/* ---------- CONTENT (Left) ---------- */
+.prd-plans__content {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* ---------- VILLA NAME ---------- */
+.prd-plans__name {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #0f4c5c;
+  margin: 0 0 6px;
+}
+
+/* ---------- TAGLINE ---------- */
+.prd-plans__tagline {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+  color: #94a3b8;
+  margin: 0 0 20px;
+}
+
+/* ---------- LEAD (Bold) ---------- */
+.prd-plans__lead {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+  color: #0f172a;
+  margin: 0 0 18px;
+}
+
+/* ---------- DESCRIPTION ---------- */
+.prd-plans__desc {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #64748b;
+  margin: 0 0 24px;
+}
+
+/* ---------- SPECS ---------- */
+.prd-plans__specs {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prd-plans__specs li {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.prd-plans__label {
+  font-weight: 700;
+  color: #0f4c5c;
+  min-width: 110px;
+  flex-shrink: 0;
+}
+
+.prd-plans__value {
+  font-weight: 400;
+  color: #1e293b;
+}
+
+/* ---------- DOTTED BUTTON (Compact) ---------- */
+.prd-plans__btn {
+  display: inline-block;
+  padding: 8px 22px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  color: #0f4c5c;
+
+  background: transparent;
+  border: 1.5px dotted #0f4c5c;
+  border-radius: 100px;
+
+  transition: all 0.35s ease;
+}
+
+.prd-plans__btn:hover {
+  background: #0f4c5c;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 76, 92, 0.25);
+  border-style: solid;
+}
+
+/* ---------- MEDIA (Right — image) ---------- */
+.prd-plans__media {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prd-plans__media img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(15, 23, 42, 0.08));
+}
+
+
+/* ============================================================================
+   9.X  FLOOR PLANS RESPONSIVE
+   ============================================================================ */
+
+/* ---------- Tablet (≤1024px) ---------- */
+@media (max-width: 1024px) {
+  .prd-plans { padding: 60px 40px; }
+  .prd-plans__head { margin-bottom: 45px; }
+  .prd-plans__title { font-size: 22px; }
+
+  .prd-plans__row {
+    gap: 40px;
+    margin-bottom: 65px;
+  }
+
+  .prd-plans__name { font-size: 26px; }
+  .prd-plans__tagline { font-size: 13px; }
+  .prd-plans__lead { font-size: 17px; }
+  .prd-plans__desc { font-size: 13px; }
+  .prd-plans__specs li { font-size: 13px; }
+  .prd-plans__label { min-width: 100px; }
+
+  .prd-plans__btn { padding: 7px 18px; font-size: 9.5px; }
+}
+
+/* ---------- Small tablet (≤900px) — Stack ---------- */
+@media (max-width: 900px) {
+  .prd-plans__row,
+  .prd-plans__row--reverse {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 55px;
+  }
+
+  /* Text first, image after */
+  .prd-plans__content {
+    max-width: 100%;
+    order: 1;
+  }
+
+  .prd-plans__media { order: 2; }
+
+  .prd-plans__row--reverse .prd-plans__content { order: 1; }
+  .prd-plans__row--reverse .prd-plans__media { order: 2; }
+
+  .prd-plans__media img { max-width: 100%; }
+}
+
+/* ---------- Mobile (≤640px) — Sab centered, specs in one line ---------- */
+@media (max-width: 640px) {
+  .prd-plans { padding: 50px 20px; }
+  .prd-plans__head { margin-bottom: 32px; }
+  .prd-plans__title { font-size: 20px; letter-spacing: 0.8px; }
+  .prd-plans__eyebrow { font-size: 9px; letter-spacing: 3px; }
+
+  .prd-plans__row,
+  .prd-plans__row--reverse {
+    gap: 22px;
+    margin-bottom: 45px;
+  }
+
+  /* Content — centered */
+  .prd-plans__content {
+    max-width: 100%;
+    order: 1;
+    text-align: center;
+  }
+
+  /* Image second */
+  .prd-plans__media {
+    order: 2;
+    width: 100%;
+  }
+
+  .prd-plans__row--reverse .prd-plans__content { order: 1; }
+  .prd-plans__row--reverse .prd-plans__media { order: 2; }
+
+  .prd-plans__media img { max-width: 100%; }
+
+  /* Sab text centered */
+  .prd-plans__name {
+    font-size: 22px;
+    letter-spacing: 0.3px;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+
+  .prd-plans__tagline {
+    font-size: 12px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .prd-plans__lead {
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  .prd-plans__desc {
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+
+  /* ✅ Specs — ek line mein centered */
+  .prd-plans__specs {
+    gap: 8px;
+    margin-bottom: 22px;
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .prd-plans__specs li {
+    font-size: 11.5px;
+    gap: 6px;
+    flex-direction: row;                   /* ✅ Row (side by side) */
+    align-items: baseline;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .prd-plans__label {
+    min-width: auto;
+    font-size: 11.5px;
+    text-align: center;
+  }
+
+  .prd-plans__value {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  /* Button — chota + centered */
+  .prd-plans__btn {
+    padding: 8px 18px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    width: auto;
+    max-width: none;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+/* ---------- Small mobile (≤400px) ---------- */
+@media (max-width: 400px) {
+  .prd-plans { padding: 40px 16px; }
+  .prd-plans__title { font-size: 18px; }
+  .prd-plans__name { font-size: 20px; }
+  .prd-plans__tagline { font-size: 11.5px; }
+  .prd-plans__lead { font-size: 14px; }
+  .prd-plans__desc { font-size: 11.5px; }
+
+  .prd-plans__specs {
+    padding-left: 0;
+    gap: 6px;
+  }
+
+  .prd-plans__specs li {
+    font-size: 11px;
+    gap: 5px;
+    flex-direction: row;                   /* ✅ Row */
+    justify-content: center;
+  }
+
+  .prd-plans__label {
+    font-size: 11px;
+  }
+
+  .prd-plans__btn {
+    font-size: 8.5px;
+    padding: 7px 14px;
+    letter-spacing: 1.4px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   10. ██  AMENITIES SECTION
+   ============================================================================ */
+.prd-amenities {
+  width: 100%;
+  padding: 70px 0;
+  background: #faf8f4;
+  overflow: hidden;
+}
+
+.prd-amenities__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+/* ---------- HEADING ---------- */
+.prd-amenities__head {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.prd-amenities__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: #0f172a;
+  margin: 0 0 14px;
+}
+
+.prd-amenities__divider {
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: #0f172a;
+  margin: 0 auto;
+}
+
+/* ---------- SLIDER ---------- */
+.prd-amenities__slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 40px;
+  padding: 20px 0;
+}
+
+.prd-amenities__track {
+  display: flex;
+  gap: 60px;
+  width: max-content;
+  animation: prd-amenities-scroll 40s linear infinite;
+  will-change: transform;
+}
+
+/* Pause on hover */
+.prd-amenities__slider:hover .prd-amenities__track {
+  animation-play-state: paused;
+}
+
+@keyframes prd-amenities-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ---------- ITEM ---------- */
+.prd-amenities__item {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 180px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Selected item */
+.prd-amenities__item.is-selected {
+  transform: scale(1.18);
+}
+
+.prd-amenities__item.is-selected .prd-amenities__icon {
+  color: #0f4c5c;
+}
+
+.prd-amenities__item.is-selected .prd-amenities__text {
+  font-weight: 700;
+  color: #0f4c5c;
+}
+
+/* ---------- ICON ---------- */
+.prd-amenities__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  color: #0f172a;
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.prd-amenities__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.prd-amenities__item:hover .prd-amenities__icon {
+  transform: translateY(-4px);
+  color: #0f4c5c;
+}
+
+/* ---------- TEXT ---------- */
+.prd-amenities__text {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+  color: #0f172a;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+
+/* ============================================================================
+   10.1  ARROWS (No circle, thicker, dark)
+   ============================================================================ */
+.prd-amenities__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+}
+
+.prd-amenities__arrow {
+  width: auto;
+  height: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px;
+  background: transparent;
+  color: #0f172a;
+  border: none;
+  border-radius: 0;
+
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.prd-amenities__arrow svg {
+  width: 32px;                            /* ✅ Bada */
+  height: 32px;
+  stroke-width: 3;                        /* ✅ Mota (SVG inline attribute se bhi) */
+}
+
+.prd-amenities__arrow:hover {
+  color: #0f4c5c;
+  transform: scale(1.12);
+}
+
+.prd-amenities__arrow:active {
+  transform: scale(0.94);
+}
+
+
+/* ============================================================================
+   10.X  AMENITIES RESPONSIVE
+   ============================================================================ */
+
+/* ---------- Tablet (≤1024px) ---------- */
+@media (max-width: 1024px) {
+  .prd-amenities__inner { padding: 0 40px; }
+  .prd-amenities__title { font-size: 22px; }
+
+  .prd-amenities__track { gap: 50px; }
+  .prd-amenities__item { width: 160px; gap: 18px; }
+  .prd-amenities__icon { width: 70px; height: 70px; }
+  .prd-amenities__text { font-size: 13px; }
+
+  .prd-amenities__arrow svg { width: 28px; height: 28px; }
+  .prd-amenities__nav { gap: 24px; }
+}
+
+/* ---------- Mobile (≤640px) ---------- */
+@media (max-width: 640px) {
+  .prd-amenities { padding: 50px 0; }
+  .prd-amenities__inner { padding: 0 20px; }
+
+  .prd-amenities__head { margin-bottom: 32px; }
+  .prd-amenities__title { font-size: 20px; letter-spacing: 1.5px; }
+
+  .prd-amenities__track { gap: 40px; }
+  .prd-amenities__item { width: 130px; gap: 14px; }
+  .prd-amenities__icon { width: 60px; height: 60px; }
+  .prd-amenities__text { font-size: 12px; }
+
+  .prd-amenities__item.is-selected {
+    transform: scale(1.12);
+  }
+
+  .prd-amenities__nav { gap: 20px; }
+  .prd-amenities__arrow svg { width: 26px; height: 26px; }
+}
+
+/* ---------- Small mobile (≤400px) ---------- */
+@media (max-width: 400px) {
+  .prd-amenities { padding: 40px 0; }
+  .prd-amenities__inner { padding: 0 16px; }
+  .prd-amenities__title { font-size: 18px; letter-spacing: 1px; }
+
+  .prd-amenities__track { gap: 32px; }
+  .prd-amenities__item { width: 110px; gap: 12px; }
+  .prd-amenities__icon { width: 50px; height: 50px; }
+  .prd-amenities__text { font-size: 11px; }
+
+  .prd-amenities__nav { gap: 18px; }
+  .prd-amenities__arrow svg { width: 24px; height: 24px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   11. GALLERY SECTION (Our Work)
+   ============================================================================ */
+
+.prd-gallery {
+  width: 100%;
+  padding: 60px 0;
+  background: #f3f1ec;
+  overflow: hidden;
+}
+
+/* ---------- PANEL — Teal with stripes ---------- */
+.prd-gallery__panel {
+  position: relative;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 50px 0 40px;
+  background: #0f4c5c;
+  border-radius: 12px;
+  overflow: visible;
+
+  /* Diagonal stripes top-right */
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      transparent 0px,
+      transparent 6px,
+      rgba(255, 255, 255, 0.05) 6px,
+      rgba(255, 255, 255, 0.05) 7px
+    );
+  background-size: 40% 40%;
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+
+/* ---------- HEADING ---------- */
+.prd-gallery__head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.prd-gallery__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.prd-gallery__subtitle {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+/* ---------- VIEWPORT ---------- */
+.prd-gallery__viewport {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  padding: 30px 0 20px;
+}
+
+.prd-gallery__track {
+  display: flex;
+  gap: 32px;
+  padding: 0 calc(50% - 240px);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+
+/* ============================================================================
+   11.1 PROJECT CARD
+   ============================================================================ */
+
+.project-card {
+  --card-width: 480px;
+
+  position: relative;
+  flex-shrink: 0;
+  width: var(--card-width);
+  margin-top: 44px;
+  padding: 260px 20px 0;
+  min-height: 340px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #ffffff, #f7f7f7);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- IMAGE ---------- */
+.project-card__image-wrap {
+  position: absolute;
+  top: -48px;
+  left: 20px;
+  right: 20px;
+  height: 310px;
+  overflow: hidden;
+  border-radius: 7px;
+  background: #d8e8ee;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+}
+
+.project-card__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s ease;
+}
+
+.project-card:hover .project-card__image {
+  transform: scale(1.05);
+}
+
+/* ---------- STAR ICON (bottom-left) ---------- */
+.project-card__star {
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  color: #0f4c5c;
+  opacity: 0.55;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-card__star svg {
+  width: 100%;
+  height: 100%;
+}
+
+.project-card:hover .project-card__star {
+  opacity: 0.9;
+  transform: rotate(-8deg) scale(1.08);
+}
+
+/* ---------- TITLE ---------- */
+.project-card__title {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 18px;
+
+  margin: 0;
+  color: #555555;
+  text-align: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+}
+
+
+/* ============================================================================
+   11.2 PAGINATION DOTS
+   ============================================================================ */
+
+.prd-gallery__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.prd-gallery__dot {
+  display: inline-block;
+  width: 22px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 0.35s ease, width 0.35s ease;
+}
+
+.prd-gallery__dot.is-active {
+  background: #ffffff;
+  width: 40px;
+}
+
+
+/* ============================================================================
+   11.3 TABLET (≤1024px)
+   ============================================================================ */
+
+@media (max-width: 1024px) {
+  .prd-gallery__panel {
+    max-width: 780px;
+    padding: 45px 0 35px;
+  }
+
+  .prd-gallery__title { font-size: 28px; }
+  .prd-gallery__head { margin-bottom: 36px; }
+
+  .prd-gallery__track {
+    gap: 26px;
+    padding: 0 calc(50% - 190px);
+  }
+
+  .project-card {
+    --card-width: 380px;
+    margin-top: 36px;
+    padding: 210px 18px 0;
+    min-height: 290px;
+  }
+
+  .project-card__image-wrap {
+    top: -40px;
+    left: 18px;
+    right: 18px;
+    height: 250px;
+  }
+
+  .project-card__title {
+    left: 18px;
+    right: 18px;
+    bottom: 16px;
+    font-size: 14px;
+  }
+
+  .project-card__star {
+    left: 18px;
+    bottom: 16px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* ============================================================================
+   11.4 MOBILE (≤640px)
+   ============================================================================ */
+
+@media (max-width: 640px) {
+  .prd-gallery { padding: 25px 0; }
+
+  .prd-gallery__panel {
+    max-width: 100%;
+    padding: 25px 0 22px;
+    border-radius: 10px;
+  }
+
+  .prd-gallery__head { margin-bottom: 20px; }
+  .prd-gallery__title { font-size: 24px; }
+  .prd-gallery__subtitle { font-size: 11.5px; }
+
+  .prd-gallery__viewport { padding: 20px 0 12px; }
+
+  .prd-gallery__track {
+    gap: 20px;
+    padding: 0 calc(50% - 150px);
+  }
+
+  .project-card {
+    --card-width: 300px;
+    margin-top: 25px;
+    padding: 165px 14px 0;
+    min-height: 205px;
+  }
+
+  .project-card__image-wrap {
+    top: -30px;
+    left: 14px;
+    right: 14px;
+    height: 190px;
+  }
+
+  .project-card__title {
+    left: 14px;
+    right: 14px;
+    bottom: 10px;
+    font-size: 13px;
+  }
+
+  .project-card__star {
+    left: 14px;
+    bottom: 10px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .prd-gallery__dots { margin-top: 15px; }
+  .prd-gallery__dot { width: 18px; }
+  .prd-gallery__dot.is-active { width: 30px; }
+}
+
+/* ============================================================================
+   11.5 SMALL MOBILE (≤400px)
+   ============================================================================ */
+
+@media (max-width: 400px) {
+  .prd-gallery { padding: 20px 0; }
+
+  .prd-gallery__panel { padding: 20px 0 18px; }
+
+  .prd-gallery__title { font-size: 20px; }
+  .prd-gallery__head { margin-bottom: 15px; }
+
+  .prd-gallery__viewport { padding: 15px 0 10px; }
+
+  .prd-gallery__track {
+    gap: 16px;
+    padding: 0 calc(50% - 125px);
+  }
+
+  .project-card {
+    --card-width: 250px;
+    margin-top: 22px;
+    padding: 140px 12px 0;
+    min-height: 180px;
+  }
+
+  .project-card__image-wrap {
+    top: -26px;
+    left: 12px;
+    right: 12px;
+    height: 165px;
+  }
+
+  .project-card__title {
+    left: 12px;
+    right: 12px;
+    bottom: 8px;
+    font-size: 12px;
+  }
+
+  .project-card__star {
+    left: 12px;
+    bottom: 8px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .prd-gallery__dots { margin-top: 12px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   12. ██  LOCATION SECTION
+   ============================================================================ */
+.prd-location {
+  width: 100%;
+  padding: 70px 60px;
+  background: #ffffff;
+}
+
+.prd-location__inner {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* ---------- HEADING ---------- */
+.prd-location__head {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.prd-location__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: #0f172a;
+  margin: 0 0 16px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.prd-location__title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: #0f4c5c;
+}
+
+.prd-location__subtitle {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #64748b;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ---------- BODY GRID ---------- */
+.prd-location__body {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* ============================================================================
+   12.1  LEFT — MAP + VIEW IN MAP (plain, no bg, no dashes)
+   ============================================================================ */
+.prd-location__media {
+  width: 100%;
+}
+
+/* ✅ No white box — transparent */
+.prd-location__map-wrap {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Map image (clickable) ---------- */
+.prd-location__map-link {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: #e2e8f0;
+  cursor: zoom-in;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  box-shadow:
+    0 15px 40px rgba(15, 76, 92, 0.12),
+    0 4px 12px rgba(15, 76, 92, 0.06);
+  transition: box-shadow 0.4s ease;
+}
+
+.prd-location__map-link:hover {
+  box-shadow:
+    0 22px 55px rgba(15, 76, 92, 0.2),
+    0 8px 18px rgba(15, 76, 92, 0.1);
+}
+
+.prd-location__map-link img {
+  width: 100%;
+  height: auto;
+  max-height: 460px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.prd-location__map-link:hover img {
+  transform: scale(1.04);
+}
+
+/* ---------- VIEW IN MAP — Plain text, no box ---------- */
+.prd-location__map-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: auto;
+  align-self: center;
+  margin-top: 24px;
+  padding: 0;
+  background: transparent;
+  color: #0f172a;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  border: none;
+  transition: color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.prd-location__map-cta svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* ✅ Hover — Page teal color */
+.prd-location__map-cta:hover {
+  color: #0f4c5c;
+  letter-spacing: 3px;
+}
+
+.prd-location__map-cta:hover svg {
+  transform: translateX(4px);
+}
+
+
+/* ============================================================================
+   12.2  RIGHT — ACCORDION
+   ============================================================================ */
+.prd-location__accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.prd-location__acc-item {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.prd-location__acc-item.is-open {
+  border-color: #0f4c5c;
+  box-shadow: 0 10px 28px rgba(15, 76, 92, 0.18);
+}
+
+/* ---------- Head ---------- */
+.prd-location__acc-head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 20px 24px;
+
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.4s ease;
+}
+
+/* Open — Teal + Diagonal stripes */
+.prd-location__acc-item.is-open .prd-location__acc-head {
+  background: #0f4c5c;
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      transparent 0px,
+      transparent 6px,
+      rgba(255, 255, 255, 0.06) 6px,
+      rgba(255, 255, 255, 0.06) 7px
+    );
+  background-size: 40% 100%;
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+
+/* ---------- Title ---------- */
+.prd-location__acc-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #0f172a;
+  line-height: 1.3;
+  flex: 1;
+  transition: color 0.3s ease;
+}
+
+.prd-location__acc-item.is-open .prd-location__acc-title {
+  color: #ffffff;
+}
+
+/* ---------- Plus icon ---------- */
+.prd-location__acc-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid #0f4c5c;
+  color: #0f4c5c;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.prd-location__acc-icon svg { width: 16px; height: 16px; }
+
+.prd-location__acc-icon .acc-line-h,
+.prd-location__acc-icon .acc-line-v {
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+/* Open — icon white on teal */
+.prd-location__acc-item.is-open .prd-location__acc-icon {
+  background: #ffffff;
+  color: #0f4c5c;
+  border-color: #ffffff;
+}
+
+/* Plus → Minus */
+.prd-location__acc-item.is-open .prd-location__acc-icon .acc-line-v {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+/* ---------- Body ---------- */
+.prd-location__acc-body {
+  max-height: 0;
+  overflow: hidden;
+  background: #f7f7f5;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prd-location__acc-item.is-open .prd-location__acc-body {
+  max-height: 400px;
+}
+
+.prd-location__acc-list {
+  list-style: none;
+  padding: 20px 26px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prd-location__acc-list li {
+  position: relative;
+  padding-left: 18px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #4a5568;
+}
+
+.prd-location__acc-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0f4c5c;
+}
+
+.prd-location__acc-list li strong {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+
+/* ============================================================================
+   12.3  MAP LIGHTBOX
+   ============================================================================ */
+.prd-map-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.prd-map-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.prd-map-lightbox__overlay {
+  position: absolute;
+  inset: 0;
+  cursor: zoom-out;
+}
+
+.prd-map-lightbox__content {
+  position: relative;
+  z-index: 2;
+  max-width: 92vw;
+  max-height: 88vh;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  transform: scale(0.94);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prd-map-lightbox.is-open .prd-map-lightbox__content {
+  transform: scale(1);
+}
+
+.prd-map-lightbox__content img {
+  display: block;
+  max-width: 92vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.prd-map-lightbox__close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 3;
+
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.prd-map-lightbox__close svg { width: 20px; height: 20px; }
+
+.prd-map-lightbox__close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg);
+}
+
+
+/* ============================================================================
+   12.X  LOCATION RESPONSIVE
+   ============================================================================ */
+
+/* ---------- Tablet (≤1024px) ---------- */
+@media (max-width: 1024px) {
+  .prd-location { padding: 60px 40px; }
+
+  .prd-location__body {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ---------- Mobile (≤640px) ---------- */
+@media (max-width: 640px) {
+  .prd-location { padding: 50px 20px; }
+
+  .prd-location__head { margin-bottom: 32px; }
+  .prd-location__title { font-size: 22px; letter-spacing: 0.8px; padding-bottom: 16px; }
+  .prd-location__subtitle { font-size: 12.5px; line-height: 1.55; }
+
+  .prd-location__body { gap: 28px; }
+
+  .prd-location__map-link img { max-height: 280px; }
+
+  .prd-location__map-cta {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-top: 18px;
+  }
+
+  .prd-location__map-cta svg { width: 12px; height: 12px; }
+
+  .prd-location__acc-item { box-shadow: 0 3px 10px rgba(15, 23, 42, 0.06); }
+
+  .prd-location__acc-head {
+    padding: 16px 18px;
+    gap: 12px;
+  }
+
+  .prd-location__acc-title { font-size: 13px; letter-spacing: 1.2px; }
+
+  .prd-location__acc-icon { width: 32px; height: 32px; }
+  .prd-location__acc-icon svg { width: 14px; height: 14px; }
+
+  .prd-location__acc-list { padding: 16px 20px; gap: 8px; }
+  .prd-location__acc-list li { font-size: 12px; padding-left: 16px; }
+
+  .prd-map-lightbox { padding: 16px; }
+  .prd-map-lightbox__close { top: 16px; right: 16px; width: 38px; height: 38px; }
+  .prd-map-lightbox__close svg { width: 16px; height: 16px; }
+
+  .prd-map-lightbox__content img {
+    max-width: 96vw;
+    max-height: 82vh;
+  }
+}
+
+/* ---------- Small mobile (≤400px) ---------- */
+@media (max-width: 400px) {
+  .prd-location { padding: 40px 16px; }
+  .prd-location__title { font-size: 18px; }
+
+  .prd-location__map-link img { max-height: 240px; }
+
+  .prd-location__map-cta {
+    font-size: 10px;
+    letter-spacing: 1.6px;
+  }
+
+  .prd-location__map-cta svg { width: 11px; height: 11px; }
+
+  .prd-location__acc-head { padding: 14px 16px; }
+  .prd-location__acc-title { font-size: 12px; }
+  .prd-location__acc-icon { width: 28px; height: 28px; }
+  .prd-location__acc-icon svg { width: 12px; height: 12px; }
+  .prd-location__acc-list li { font-size: 11.5px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   13. ██  DEVELOPER SECTION
+   ============================================================================ */
+.prd-developer {
+  width: 100%;
+  padding: 80px 60px;
+  background: #ffffff;
+}
+
+.prd-developer__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ---------- HEADING ---------- */
+.prd-developer__head {
+  margin-bottom: 40px;
+}
+
+.prd-developer__eyebrow {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #0f4c5c;
+  margin: 0 0 8px;
+}
+
+.prd-developer__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: #0f172a;
+  margin: 0 0 18px;
+}
+
+.prd-developer__divider {
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: #0f4c5c;
+  margin: 0 auto;
+}
+
+/* ---------- LOGO ---------- */
+.prd-developer__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 28px;
+  width: 140px;
+  height: 100px;
+}
+
+.prd-developer__logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ---------- DESCRIPTION ---------- */
+.prd-developer__desc {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #4a5568;
+  margin: 0 auto 44px;
+  max-width: 800px;
+}
+
+/* ============================================================================
+   13.1  STATS
+   ============================================================================ */
+.prd-developer__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 700px;
+  margin: 0 auto 44px;
+  padding: 32px 20px;
+  border-top: 1px dashed rgba(15, 23, 42, 0.15);
+  border-bottom: 1px dashed rgba(15, 23, 42, 0.15);
+}
+
+.prd-developer__stat {
+  text-align: center;
+}
+
+.prd-developer__stat-value {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  color: #0f172a;
+  margin: 0 0 10px;
+}
+
+.prd-developer__stat-value span {
+  color: #0f4c5c;
+  font-size: 26px;
+  margin-left: 2px;
+}
+
+.prd-developer__stat-label {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ============================================================================
+   13.2  WEBSITE LINK
+   ============================================================================ */
+.prd-developer__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #0f4c5c;
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid #0f4c5c;
+
+  transition: color 0.3s ease, border-color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.prd-developer__link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+.prd-developer__link:hover {
+  color: #0f172a;
+  border-color: #0f172a;
+  letter-spacing: 0.6px;
+}
+
+.prd-developer__link:hover svg {
+  transform: translateX(4px);
+}
+
+
+/* ============================================================================
+   13.X  DEVELOPER RESPONSIVE
+   ============================================================================ */
+
+/* ---------- Tablet (≤1024px) ---------- */
+@media (max-width: 1024px) {
+  .prd-developer { padding: 65px 40px; }
+  .prd-developer__title { font-size: 26px; }
+  .prd-developer__desc { font-size: 14px; }
+  .prd-developer__stat-value { font-size: 32px; }
+  .prd-developer__stat-value span { font-size: 22px; }
+}
+
+/* ---------- Mobile (≤640px) ---------- */
+@media (max-width: 640px) {
+  .prd-developer { padding: 55px 20px; }
+
+  .prd-developer__head { margin-bottom: 32px; }
+  .prd-developer__eyebrow { font-size: 10px; letter-spacing: 3px; }
+  .prd-developer__title { font-size: 22px; letter-spacing: 0.8px; margin-bottom: 14px; }
+
+  .prd-developer__logo { width: 120px; height: 85px; margin-bottom: 22px; }
+
+  .prd-developer__desc {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .prd-developer__stats {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 26px 10px;
+    margin-bottom: 32px;
+  }
+
+  .prd-developer__stat-value { font-size: 28px; margin-bottom: 6px; }
+  .prd-developer__stat-value span { font-size: 20px; }
+  .prd-developer__stat-label { font-size: 10.5px; letter-spacing: 1px; }
+
+  .prd-developer__link { font-size: 12.5px; }
+}
+
+/* ---------- Small mobile (≤400px) ---------- */
+@media (max-width: 400px) {
+  .prd-developer { padding: 45px 16px; }
+  .prd-developer__title { font-size: 19px; }
+  .prd-developer__desc { font-size: 12.5px; }
+  .prd-developer__stat-value { font-size: 26px; }
+  .prd-developer__stat-value span { font-size: 18px; }
+  .prd-developer__link { font-size: 12px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   14. ██  ENQUIRY MODAL
+   ============================================================================ */
+.prd-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.prd-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---------- Overlay ---------- */
+.prd-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+
+/* ---------- Box ---------- */
+.prd-modal__box {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+
+  transform: translateY(24px) scale(0.96);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prd-modal.is-open .prd-modal__box {
+  transform: translateY(0) scale(1);
+}
+
+/* ---------- Header ---------- */
+.prd-modal__header {
+  position: relative;
+  padding: 24px 60px 24px 28px;
+  background: #0f4c5c;
+  border-radius: 12px 12px 0 0;
+}
+
+.prd-modal__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ---------- Close ---------- */
+.prd-modal__close {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.prd-modal__close svg {
+  width: 16px;
+  height: 16px;
+}
+
+.prd-modal__close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* ---------- Body (Form) ---------- */
+.prd-modal__body {
+  padding: 32px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------- Field ---------- */
+.prd-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.prd-modal__label {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.prd-modal__input {
+  width: 100%;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid rgba(15, 23, 42, 0.15);
+  outline: none;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #0f172a;
+
+  transition: border-color 0.3s ease;
+}
+
+.prd-modal__input::placeholder {
+  color: #94a3b8;
+}
+
+.prd-modal__input:focus {
+  border-bottom-color: #0f4c5c;
+}
+
+/* Select reset */
+.prd-modal__input option {
+  color: #0f172a;
+  background: #ffffff;
+}
+
+/* ---------- Error ---------- */
+.prd-modal__error {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #dc2626;
+  margin: 0;
+  min-height: 0;
+  line-height: 1.3;
+  display: none;
+}
+
+.prd-modal__error.is-visible {
+  display: block;
+  margin-top: 2px;
+}
+
+/* ---------- Consent ---------- */
+.prd-modal__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #4a5568;
+}
+
+.prd-modal__consent input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  accent-color: #0f4c5c;
+  cursor: pointer;
+}
+
+.prd-modal__consent a {
+  color: #0f4c5c;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ---------- Submit ---------- */
+.prd-modal__submit {
+  margin-top: 6px;
+  padding: 14px 28px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  background: #0f4c5c;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(15, 76, 92, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prd-modal__submit:hover {
+  background: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(15, 76, 92, 0.4);
+}
+
+.prd-modal__submit:active {
+  transform: translateY(0);
+}
+
+/* ---------- Success State ---------- */
+.prd-modal__success {
+  padding: 48px 32px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.prd-modal__success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(15, 76, 92, 0.1);
+  color: #0f4c5c;
+  margin-bottom: 8px;
+}
+
+.prd-modal__success-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.prd-modal__success-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.prd-modal__success-text {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0;
+  max-width: 320px;
+}
+
+/* ---------- Body lock ---------- */
+body.prd-modal-open {
+  overflow: hidden;
+}
+
+
+/* ============================================================================
+   14.X  MODAL RESPONSIVE
+   ============================================================================ */
+@media (max-width: 640px) {
+  .prd-modal {
+    padding: 16px;
+    align-items: center;
+  }
+
+  .prd-modal__box {
+    max-width: 100%;
+    max-height: 88vh;
+    border-radius: 10px;
+  }
+
+  .prd-modal__header {
+    padding: 20px 54px 20px 22px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .prd-modal__title { font-size: 14px; letter-spacing: 1.2px; }
+
+  .prd-modal__close { right: 12px; width: 30px; height: 30px; }
+  .prd-modal__close svg { width: 14px; height: 14px; }
+
+  .prd-modal__body {
+    padding: 24px 22px 26px;
+    gap: 18px;
+  }
+
+  .prd-modal__input { font-size: 13.5px; }
+
+  .prd-modal__consent { font-size: 11.5px; }
+
+  .prd-modal__submit {
+    padding: 13px 24px;
+    font-size: 11px;
+    letter-spacing: 1.8px;
+  }
+
+  .prd-modal__success { padding: 40px 24px 32px; }
+  .prd-modal__success-title { font-size: 19px; }
+  .prd-modal__success-text { font-size: 12.5px; }
+}
+
+@media (max-width: 400px) {
+  .prd-modal__title { font-size: 13px; }
+  .prd-modal__body { padding: 22px 18px 24px; gap: 16px; }
+  .prd-modal__submit { font-size: 10.5px; padding: 12px 20px; }
+}
